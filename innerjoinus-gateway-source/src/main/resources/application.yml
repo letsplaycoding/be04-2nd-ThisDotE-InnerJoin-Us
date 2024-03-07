@@ -1,0 +1,79 @@
+server:
+  port: 8000
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      routes:
+        #        - id: user-service
+        #          uri: lb://INNERJOINUS-USER-SERVICE
+        #          predicates:
+        #            - Path=/user-service/**
+        #          filters:
+        #            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+
+        - id: user-service
+          uri: lb://INNERJOINUS-USER-SERVICE
+          predicates:
+            - Path=/user-service/actuator/**
+            - Method=POST
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+
+        # ?? ??
+        - id: user-service
+          uri: lb://INNERJOINUS-USER-SERVICE
+          predicates:
+            - Path=/user-service/users
+            - Method=POST
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+
+
+        # ?? ?? ?? ?? ???
+        - id: user-service
+          uri: lb://INNERJOINUS-USER-SERVICE
+          predicates:
+            - Path=/user-service/**
+            - Method=GET
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+
+            #?? ??? ????? ??? ???? ????? ???? ?? ??
+            - AuthorizationHeaderFilter
+
+
+
+        - id: user-service
+          uri: lb://INNERJOINUS-USER-SERVICE
+          predicates:
+            - Path=/user-service/login
+            - Method=POST
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+
+        # ??? ?? ???(???????) ?? ?? ?
+        - id: article-reply-service
+          uri: lb://INNERJOINUS-ARTICLE-REPLY-SERVICE
+          predicates:
+            - Path=/article-reply-service/**
+          filters:
+            - RewritePath=/article-reply-service/(?<segment>.*), /$\{segment}
+
+
+
+# ???? ???? ??? ??
+# ?? ??? ?????? ??? ? ? ??? ?? ??? ??? ????.
+
+token:
+  # JWT ??? Verify Signature ? ?? secret-key
+  secret: l1Z5I9WufSD5qM0UTHXDJa1kaGxBlyhKMbx+ONkqzeRTlKdF8Bq37mA3Z8nhjRlwVUrL/u3bdkFeamIrUoWvVw==
