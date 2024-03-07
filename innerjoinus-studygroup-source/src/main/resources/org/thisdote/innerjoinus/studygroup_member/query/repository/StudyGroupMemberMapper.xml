@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.thisdote.innerjoinus.studygroup_member.query.repository.StudyGroupMemberMapper">
+
+    <resultMap id="memberResultMap" type="org.thisdote.innerjoinus.studygroup_member.dto.StudyGroupMemberDTO">
+        <id property="studyGroupMemberId" column="STUDYGROUP_MEMBER_ID"/>
+        <result property="studyGroupId" column="STUDYGROUP_ID"/>
+        <result property="studyGroupRole" column="STUDYGROUP_ROLE"/>
+        <result property="studyGroupRegistDate" column="STUDYGROUP_REGIST_DATE"/>
+        <result property="userCode" column="USER_CODE"/>
+    </resultMap>
+
+    <select id="selectAllStudyGroupMember" resultMap="memberResultMap">
+        SELECT
+               A.STUDYGROUP_MEMBER_ID
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_ROLE
+             , A.STUDYGROUP_REGIST_DATE
+             , A.USER_CODE
+          FROM STUDYGROUP_MEMBER A
+    </select>
+
+    <select id="selectAllStudyGroupLeader" resultMap="memberResultMap">
+        SELECT
+               A.STUDYGROUP_MEMBER_ID
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_ROLE
+             , A.STUDYGROUP_REGIST_DATE
+             , A.USER_CODE
+          FROM STUDYGROUP_MEMBER A
+         WHERE STUDYGROUP_ROLE = '1';
+    </select>
+
+    <select id="selectAllStudyGroupFollower" resultMap="memberResultMap">
+        SELECT
+               A.STUDYGROUP_MEMBER_ID
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_ROLE
+             , A.STUDYGROUP_REGIST_DATE
+             , A.USER_CODE
+          FROM STUDYGROUP_MEMBER A
+         WHERE STUDYGROUP_ROLE = '0';
+    </select>
+
+</mapper>
