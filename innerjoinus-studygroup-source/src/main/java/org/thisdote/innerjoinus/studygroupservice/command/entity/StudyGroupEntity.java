@@ -1,12 +1,12 @@
-package org.thisdote.innerjoinus.studygroupservice.entity;
+package org.thisdote.innerjoinus.studygroupservice.command.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
 @Table(name="studygroup")
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
