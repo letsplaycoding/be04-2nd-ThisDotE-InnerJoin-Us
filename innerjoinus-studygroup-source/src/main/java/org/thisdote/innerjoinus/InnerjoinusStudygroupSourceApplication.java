@@ -16,7 +16,6 @@ public class InnerjoinusStudygroupSourceApplication {
         SpringApplication.run(InnerjoinusStudygroupSourceApplication.class, args);
     }
 
-
     @Bean
     public ModelMapper getModelMapper() {
         return new ModelMapper();
