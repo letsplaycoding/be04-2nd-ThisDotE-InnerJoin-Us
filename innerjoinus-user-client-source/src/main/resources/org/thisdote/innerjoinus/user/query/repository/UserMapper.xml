@@ -42,7 +42,7 @@
              , A.USER_GRADE
              , A.USER_RESIGN_STATUS
           FROM USER A
-         WHERE USER_RESIGN_STATUS = 1
+         WHERE USER_RESIGN_STATUS = 0
     </select>
 
     <select id="selectUsersByResignStatus" resultMap="userResultMap" parameterType="_int">

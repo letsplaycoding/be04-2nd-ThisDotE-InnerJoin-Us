@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.thisdote.innerjoinus.user.dto.UserDTO;
 import org.thisdote.innerjoinus.user.query.service.UserQueryService;
-import org.thisdote.innerjoinus.user.query.vo.ResponseUser;
+import org.thisdote.innerjoinus.user.vo.ResponseUser;
 
 import java.util.ArrayList;
 import java.util.List;

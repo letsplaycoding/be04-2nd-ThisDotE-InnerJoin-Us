@@ -16,6 +16,6 @@ public class UserDTO {
     private Date userRegistDate;
     private Date userInfoUpdateDate;
     private int userGrade;
-    private int userResignStatus;
+    private int userResignStatus;       // 0 - 회원, 1 - 탈퇴 회원
     private StudyGroupMemberDTO studyGroupMemberDTO;
 }

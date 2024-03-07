@@ -1,4 +1,4 @@
-package org.thisdote.innerjoinus.user.query.vo;
+package org.thisdote.innerjoinus.user.vo;
 
 import lombok.Data;
 
