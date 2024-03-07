@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.thisdote.innerjoinus.user.dto.UserDTO;
-import org.thisdote.innerjoinus.user.query.service.UserQueryServiceImpl;
+import org.thisdote.innerjoinus.user.query.service.UserQueryService;
 import org.thisdote.innerjoinus.user.query.vo.ResponseUser;
 
 import java.util.ArrayList;
@@ -20,10 +20,10 @@ import java.util.List;
 public class UserQueryController {
 
     private final ModelMapper mapper;
-    private final UserQueryServiceImpl userQueryService;
+    private final UserQueryService userQueryService;
 
     @Autowired
-    public UserQueryController(ModelMapper mapper, UserQueryServiceImpl userQueryService) {
+    public UserQueryController(ModelMapper mapper, UserQueryService userQueryService) {
         this.mapper = mapper;
         this.userQueryService = userQueryService;
     }
