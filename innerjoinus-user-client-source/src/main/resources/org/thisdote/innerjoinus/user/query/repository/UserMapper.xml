@@ -42,6 +42,7 @@
              , A.USER_GRADE
              , A.USER_RESIGN_STATUS
           FROM USER A
+         WHERE USER_RESIGN_STATUS = 1
     </select>
 
     <select id="selectUsersByResignStatus" resultMap="userResultMap" parameterType="_int">
@@ -78,7 +79,7 @@
          WHERE USER_ID = #{userId};
     </select>
 
-    <select id="selectUserCode" resultMap="userResultMap" parameterType="_int">
+    <select id="selectUserByUserCode" resultMap="userResultMap" parameterType="_int">
         SELECT
                A.USER_CODE
              , A.USER_ID
@@ -93,28 +94,6 @@
              , A.USER_RESIGN_STATUS
           FROM USER A
          WHERE USER_CODE = #{userCode};
-    </select>
-
-    <select id="selectUserByUserCode" resultMap="studyGroupMemberResultMap">
-        SELECT
-               A.USER_CODE
-             , A.USER_ID
-             , A.USER_PASSWORD
-             , A.USER_BIRTHDAY
-             , A.USER_PHONE
-             , A.USER_EMAIL
-             , A.USER_STUDYGROUP_STATUS
-             , A.USER_REGIST_DATE
-             , A.USER_INFO_UPDATE_DATE
-             , A.USER_GRADE
-             , A.USER_RESIGN_STATUS
-             , B.STUDYGROUP_ID
-             , B.STUDYGROUP_ROLE
-             , B.STUDYGROUP_REGIST_DATE
-             , B.USER_CODE
-          FROM USER A
-          JOIN STUDYGROUP_MEMBER B ON (A.USER_CODE = B.USER_CODE)
-         WHERE A.USER_CODE = #{userCode}
     </select>
 
 </mapper>

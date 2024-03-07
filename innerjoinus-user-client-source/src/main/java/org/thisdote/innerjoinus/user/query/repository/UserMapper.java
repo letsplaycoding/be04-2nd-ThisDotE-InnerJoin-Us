@@ -10,13 +10,9 @@ public interface UserMapper {
 
     List<UserDTO> selectAllUser();
 
-    List<UserDTO> selectUserByUserCode(int userCode);
-
     List<UserDTO> selectUserId(String userId);
 
-    UserDTO selectUserCode(int userCode);
-
-    List<UserDTO> updateUserEmail(String userEmail);
+    UserDTO selectUserByUserCode(int userCode);
 
     List<UserDTO> selectUsersByResignStatus(int resignStatus);
 }
