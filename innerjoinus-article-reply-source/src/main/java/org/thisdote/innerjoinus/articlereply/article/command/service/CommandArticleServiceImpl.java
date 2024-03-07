@@ -1,12 +1,15 @@
 package org.thisdote.innerjoinus.articlereply.article.command.service;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.thisdote.innerjoinus.articlereply.article.command.aggregate.ArticleEntity;
 import org.thisdote.innerjoinus.articlereply.article.command.repository.CommandArticleRepository;
 import org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO;
+
+import java.util.Date;
 
 @Service
 public class CommandArticleServiceImpl implements CommandArticleService {
@@ -21,7 +24,11 @@ public class CommandArticleServiceImpl implements CommandArticleService {
 
     @Transactional
     public void registArticle(ArticleDTO newArticle){
+        newArticle.setArticleCreateDate(new Date());
+        newArticle.setArticleLastUpdateDate(new Date());
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         commandArticleRepository.save(mapper.map(newArticle, ArticleEntity.class));
+
     }
 
     @Transactional
@@ -37,7 +44,11 @@ public class CommandArticleServiceImpl implements CommandArticleService {
     }
 
     @Transactional
+    @Override
     public void modifyArticle(ArticleDTO articleDTO) {
-        commandArticleRepository.save(mapper.map(articleDTO, ArticleEntity.class));
+        ArticleEntity article = commandArticleRepository.findById(articleDTO.getArticleId()).get();
+        article.setArticleTitle(articleDTO.getArticleTitle());
+        article.setArticleContent(articleDTO.getArticleContent());
+        article.setArticleLastUpdateDate(new Date());
     }
 }

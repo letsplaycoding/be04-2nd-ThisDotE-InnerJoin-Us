@@ -1,14 +1,12 @@
-package org.thisdote.innerjoinus.articlereply.article.dto;
+package org.thisdote.innerjoinus.articlereply.article.command.vo;
 
 import lombok.Data;
-import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
-
+@Component
 @Data
-public class ArticleDTO {
-
-    private int articleId;
+public class RequestRegistArticle {
     private String articleTitle;
     private String articleContent;
     private int articleCategory;
@@ -26,5 +24,5 @@ public class ArticleDTO {
     private int studygroupCurrentMemberCount;
     private int studygroupPendingMemberCount;
     private int articleDeleteStatus;
-    private ReplyDTO replyDTOList;
+
 }
