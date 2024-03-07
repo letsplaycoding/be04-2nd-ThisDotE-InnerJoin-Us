@@ -3,6 +3,8 @@ package org.thisdote.innerjoinus.articlereply.article.command.aggregate;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "article")
 @Data
@@ -18,9 +20,9 @@ public class ArticleEntity {
     @Column(name = "article_category")
     private Integer articleCategory;
     @Column(name = "article_create_date")
-    private String articleCreateDate;
+    private Date articleCreateDate;
     @Column(name = "article_last_update_date")
-    private String articleLastUpdateDate;
+    private Date articleLastUpdateDate;
     @Column(name = "article_view_count")
     private Integer articleViewCount;
     @Column(name = "article_like_count")
@@ -32,7 +34,7 @@ public class ArticleEntity {
     @Column(name = "studygroup_member_max_count")
     private Integer studygroupMemberMaxCount;
     @Column(name = "studygroup_recruitment_deadline")
-    private String studygroupRecruitmentDeadline;
+    private Date studygroupRecruitmentDeadline;
     @Column(name = "article_question_category")
     private Integer articleQuestionCategory;
     @Column(name = "user_code")

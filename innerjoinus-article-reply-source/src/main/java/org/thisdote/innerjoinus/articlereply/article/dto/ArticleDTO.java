@@ -3,6 +3,8 @@ package org.thisdote.innerjoinus.articlereply.article.dto;
 import lombok.Data;
 import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
 
+import java.util.Date;
+
 @Data
 public class ArticleDTO {
 
@@ -10,14 +12,14 @@ public class ArticleDTO {
     private String articleTitle;
     private String articleContent;
     private int articleCategory;
-    private String articleCreateDate;
-    private String articleLastUpdateDate;
+    private Date articleCreateDate;
+    private Date articleLastUpdateDate;
     private int articleViewCount;
     private int articleLikeCount;
     private int articleReplyCount;
     private int articleReportStatus;
     private int studygroupMemberMaxCount;
-    private String studygroupRecruitmentDeadline;
+    private Date studygroupRecruitmentDeadline;
     private String articleQuestionCategory;
     private int userCode;
     private int studygroupId;
