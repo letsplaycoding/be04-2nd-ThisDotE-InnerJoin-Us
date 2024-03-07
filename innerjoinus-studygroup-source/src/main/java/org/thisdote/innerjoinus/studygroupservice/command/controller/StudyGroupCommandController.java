@@ -7,43 +7,37 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.thisdote.innerjoinus.studygroupservice.command.service.StudyGroupCommandService;
+import org.thisdote.innerjoinus.studygroupservice.command.vo.RequestStudyGroup;
 import org.thisdote.innerjoinus.studygroupservice.dto.StudyGroupCommandDTO;
 import org.thisdote.innerjoinus.studygroupservice.dto.StudyGroupDTO;
 import org.thisdote.innerjoinus.studygroupservice.query.vo.ResponseStudyGroup;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/")
-public class StudyGroupController {
+public class StudyGroupCommandController {
 
     private Environment env;
     private ModelMapper mapper;
     private StudyGroupCommandService studyGroupCommandService;
 
     @Autowired
-    public StudyGroupController(Environment env,
-                                ModelMapper mapper, StudyGroupCommandService studyGroupCommandService) {
+    public StudyGroupCommandController(Environment env,
+                                       ModelMapper mapper, StudyGroupCommandService studyGroupCommandService) {
         this.env = env;
         this.mapper = mapper;
         this.studyGroupCommandService = studyGroupCommandService;
     }
 
-//    @GetMapping("/studygroup")
-//    public ResponseEntity<List<ResponseStudyGroup>> getStudyGroups(@PathVariable("studygroupId") int studyGroupId) {
-//
-//    }
-
     /* 필기. 게시글 생성(Insert) */
-    @PostMapping("/studygroups")
-    public ResponseEntity<ResponseStudyGroup> registStudyGroup(@RequestBody ResponseStudyGroup studyGroup) {
+    @PostMapping("/studygroup/insert")
+    public ResponseEntity<ResponseStudyGroup> registStudyGroup(@RequestBody RequestStudyGroup studyGroup) {
 
-        StudyGroupDTO studyGroupDTO = mapper.map(studyGroup, StudyGroupDTO.class);
-        System.out.println("studyGroupDTO = " + studyGroupDTO);
+        StudyGroupCommandDTO studyGroupCommandDTO = mapper.map(studyGroup, StudyGroupCommandDTO.class);
+        System.out.println("studyGroupDTO = " + studyGroupCommandDTO);
 
-        studyGroupCommandService.registStudygroup(new StudyGroupCommandDTO());
+        studyGroupCommandService.insertStudygroup(studyGroupCommandDTO);
 
-        ResponseStudyGroup responseStudyGroup = mapper.map(studyGroupDTO, ResponseStudyGroup.class);
+        ResponseStudyGroup responseStudyGroup = mapper.map(studyGroupCommandDTO, ResponseStudyGroup.class);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseStudyGroup);
     }

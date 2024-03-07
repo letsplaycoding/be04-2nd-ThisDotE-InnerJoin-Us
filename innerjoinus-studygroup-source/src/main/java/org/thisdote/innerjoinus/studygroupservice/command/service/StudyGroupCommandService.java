@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.thisdote.innerjoinus.studygroupservice.command.entity.StudyGroupEntity;
 import org.thisdote.innerjoinus.studygroupservice.command.repository.StudyGroupRepository;
 import org.thisdote.innerjoinus.studygroupservice.dto.StudyGroupCommandDTO;
+import org.thisdote.innerjoinus.studygroupservice.dto.StudyGroupDTO;
 
 @Service
 public class StudyGroupCommandService {
@@ -35,6 +36,11 @@ public class StudyGroupCommandService {
     @Transactional
     public void modifyStudygroup(StudyGroupCommandDTO studygroup) {
         StudyGroupEntity studyGroupEntity = mapper.map(studygroup, StudyGroupEntity.class);
+        studygroupRepository.save(studyGroupEntity);
+    }
+
+    public void insertStudygroup(StudyGroupCommandDTO studyGroupCommandDTO) {
+        StudyGroupEntity studyGroupEntity = mapper.map(studyGroupCommandDTO, StudyGroupEntity.class);
         studygroupRepository.save(studyGroupEntity);
     }
 }

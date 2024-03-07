@@ -33,8 +33,4 @@ public class StudyGroupQueryController {
         List<StudyGroupDTO> studyGroupDTOList = studyGroupService.viewAllStudyGroup();
         return studyGroupDTOList;
     }
-
-    /* 필기. 게시글 생성(Insert) */
-    @PostMapping("/studygroups")
-    public
 }
