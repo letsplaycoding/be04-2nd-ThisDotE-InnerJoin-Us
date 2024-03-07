@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.thisdote.innerjoinus.articlereply.reply.query.repository.ReplyMapper">
+
+    <resultMap id="replyResultMap" type="org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO">
+        <id property="replyId" column="reply_id"/>
+        <result property="replyReportStatus" column="reply_report_status"/>
+        <result property="replyContent" column="reply_content"/>
+        <result property="replyCreatedDate" column="reply_create_date"/>
+        <result property="replyLastUpdateDate" column="reply_last_update_date"/>
+        <result property="replyLikeCount" column="reply_like_count"/>
+        <result property="userCode" column="user_code"/>
+        <result property="replyDeleteStatus" column="reply_delete_status"/>
+    </resultMap>
+
+    <select id="selectAllReply" resultMap="replyResultMap">
+        SELECT
+               A.REPLY_ID
+             , A.REPLY_REPORT_STATUS
+             , A.REPLY_CONTENT
+             , A.REPLY_CREATE_DATE
+             , A.REPLY_LAST_UPDATE_DATE
+             , A.REPLY_LIKE_COUNT
+             , A.USER_CODE
+             , A.REPLY_DELETE_STATUS
+          FROM REPLY A;
+    </select>
+
+    <select id="selectReplyByUser" resultMap="replyResultMap" parameterType="_int">
+        SELECT
+               A.REPLY_ID
+             , A.REPLY_REPORT_STATUS
+             , A.REPLY_CONTENT
+             , A.REPLY_CREATE_DATE
+             , A.REPLY_LAST_UPDATE_DATE
+             , A.REPLY_LIKE_COUNT
+             , A.USER_CODE
+             , A.REPLY_DELETE_STATUS
+          FROM REPLY A
+         WHERE A.user_code = #{userCode};
+    </select>
+
+</mapper>
