@@ -26,8 +26,8 @@ public class ArticleController {
     }
 
     @GetMapping("/select")
-    public ResponseEntity<List<ResponseArticle>> selectAllArticle(@PathVariable("selectArticleByUser") int userId){
-        List<ArticleDTO> articleDTOList = articleService.selectArticleByUser(userId);
+    public ResponseEntity<List<ResponseArticle>> selectAllArticle(){
+        List<ArticleDTO> articleDTOList = articleService.selectAllArticle();
         List<ResponseArticle> returnValue = articleDTOToTesponseOrder(articleDTOList);
 
         return ResponseEntity.status(HttpStatus.OK).body(returnValue);
