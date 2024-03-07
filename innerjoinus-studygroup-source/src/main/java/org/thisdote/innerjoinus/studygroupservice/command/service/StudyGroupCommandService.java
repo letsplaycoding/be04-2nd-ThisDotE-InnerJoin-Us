@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.thisdote.innerjoinus.studygroupservice.command.entity.StudyGroupEntity;
 import org.thisdote.innerjoinus.studygroupservice.command.repository.StudyGroupRepository;
 import org.thisdote.innerjoinus.studygroupservice.dto.StudyGroupCommandDTO;
-import org.thisdote.innerjoinus.studygroupservice.dto.StudyGroupDTO;
 
 @Service
 public class StudyGroupCommandService {
@@ -20,6 +19,7 @@ public class StudyGroupCommandService {
         this.mapper = mapper;
         this.studygroupRepository = studygroupRepository;
     }
+
 
     @Transactional
     public void registStudygroup(StudyGroupCommandDTO newStudygroup) {
@@ -43,4 +43,15 @@ public class StudyGroupCommandService {
         StudyGroupEntity studyGroupEntity = mapper.map(studyGroupCommandDTO, StudyGroupEntity.class);
         studygroupRepository.save(studyGroupEntity);
     }
+
+    @Transactional
+    public void updateStudyGroup(StudyGroupCommandDTO studyGroupCommandDTO) {
+        StudyGroupEntity studyGroup = StudyGroupRepository.findById(studyGroupCommandDTO.getStudygroupId()).get();
+        studyGroup.setStudygroupType(studyGroupCommandDTO.getStudygroupType());
+        studyGroup.setStudygroupMemberCount(studyGroupCommandDTO.getStudygroupMemberCount());
+        studyGroup.setStudygroupActivationStatus(studyGroupCommandDTO.getStudygroupActivationStatus());
+        studyGroup.setStudygroupStudyTime(studyGroupCommandDTO.getStudygroupStudyTime());
+        studyGroup.setStudygroupContent(studyGroupCommandDTO.getStudygroupContent());
+    }
+
 }

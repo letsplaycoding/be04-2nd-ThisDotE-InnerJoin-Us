@@ -13,6 +13,6 @@ public class ResponseStudyGroup {
     private int studygroupMemberCount;
     private int studygroupActivationStatus;
     private String studygroupStudyTime;
-    private String studygorupContent;
+    private String studygroupContent;
     private int studygroupDeleteStatus;
 }
