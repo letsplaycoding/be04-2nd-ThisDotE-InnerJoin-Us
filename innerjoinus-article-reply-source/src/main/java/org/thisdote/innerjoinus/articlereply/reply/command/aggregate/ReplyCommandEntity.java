@@ -2,6 +2,7 @@ package org.thisdote.innerjoinus.articlereply.reply.command.aggregate;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.apache.ibatis.type.Alias;
 
 import java.util.Date;
 
@@ -12,6 +13,8 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
+
+@Alias(value = "RCE")
 public class ReplyCommandEntity {
 
     @Id
@@ -37,7 +40,7 @@ public class ReplyCommandEntity {
     @Column(name = "user_code")
     private int userCode;
 
-    @Column(name = "artcle_id")
+    @Column(name = "article_id")
     private int articleId;
 
     @Column(name = "reply_delete_status")
