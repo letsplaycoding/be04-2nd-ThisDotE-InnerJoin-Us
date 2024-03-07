@@ -16,8 +16,7 @@ public class StudyGroupServiceImpl implements StudyGroupService{
     private final ModelMapper mapper;
 
     @Autowired
-    public StudyGroupServiceImpl(StudyGroupRepository studyGroupRepository,
-                                 ModelMapper mapper) {
+    public StudyGroupServiceImpl(StudyGroupRepository studyGroupRepository, ModelMapper mapper) {
         this.studyGroupRepository = studyGroupRepository;
         this.mapper = mapper;
     }
