@@ -1,6 +1,7 @@
 package org.thisdote.innerjoinus.articlereply.article.dto;
 
 import lombok.Data;
+import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
 
 @Data
 public class ArticleDTO {
