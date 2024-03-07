@@ -39,7 +39,7 @@ public class StudyGroupCommandController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseStudyGroup);
     }
-    @PostMapping("/studygroup/update")
+    @PostMapping("/studygroup/update/{studygroupId}")
     public ResponseEntity<ResponseModifyStudyGroup> modifyArticle(@RequestBody RequestModifyStudyGroup modifyStudyGroup){
         StudyGroupCommandDTO studyGroupCommandDTO = mapper.map(modifyStudyGroup, StudyGroupCommandDTO.class);
         studyGroupCommandService.updateStudyGroup(studyGroupCommandDTO);

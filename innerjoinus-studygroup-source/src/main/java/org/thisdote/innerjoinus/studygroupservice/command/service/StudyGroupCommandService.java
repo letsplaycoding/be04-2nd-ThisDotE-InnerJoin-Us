@@ -46,7 +46,7 @@ public class StudyGroupCommandService {
 
     @Transactional
     public void updateStudyGroup(StudyGroupCommandDTO studyGroupCommandDTO) {
-        StudyGroupEntity studyGroup = StudyGroupRepository.findById(studyGroupCommandDTO.getStudygroupId()).get();
+        StudyGroupEntity studyGroup = studygroupRepository.findById(studyGroupCommandDTO.getStudygroupId()).get();
         studyGroup.setStudygroupType(studyGroupCommandDTO.getStudygroupType());
         studyGroup.setStudygroupMemberCount(studyGroupCommandDTO.getStudygroupMemberCount());
         studyGroup.setStudygroupActivationStatus(studyGroupCommandDTO.getStudygroupActivationStatus());
