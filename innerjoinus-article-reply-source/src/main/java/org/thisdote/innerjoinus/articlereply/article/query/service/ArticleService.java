@@ -7,4 +7,6 @@ import java.util.List;
 public interface ArticleService {
     List<ArticleDTO> selectAllArticle();
     List<ArticleDTO> selectArticleByUser(int userCode);
+
+    List<ArticleDTO> selectAllQuestionArticle();
 }

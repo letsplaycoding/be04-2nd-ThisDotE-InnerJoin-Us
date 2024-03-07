@@ -4,12 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO;
 import org.thisdote.innerjoinus.articlereply.article.query.service.ArticleService;
-import org.thisdote.innerjoinus.articlereply.article.query.service.ArticleServiceImpl;
 import org.thisdote.innerjoinus.articlereply.article.query.vo.ResponseArticle;
 
 import java.util.ArrayList;
@@ -32,6 +30,17 @@ public class ArticleController {
 
         return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
+
+    @GetMapping("/question")
+    public ResponseEntity<List<ResponseArticle>> selectAllQuestionArticle(){
+        List<ArticleDTO> articleDTOList = articleService.selectAllQuestionArticle();
+        List<ResponseArticle> returnValue = articleDTOToTesponseOrder(articleDTOList);
+
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
+    }
+
+
+
 
     private List<ResponseArticle> articleDTOToTesponseOrder(List<ArticleDTO> articleDTOList) {
         List<ResponseArticle> responseArticles = new ArrayList<>();
