@@ -1,9 +1,9 @@
 server:
-  port: 0
+  port: 8888
 
 spring:
   application:
-    name:
+    name: innerjoinus-{name}
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/communityfordeveloper
