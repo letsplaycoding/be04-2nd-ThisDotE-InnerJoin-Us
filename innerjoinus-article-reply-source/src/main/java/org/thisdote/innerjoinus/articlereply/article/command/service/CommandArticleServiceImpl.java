@@ -35,6 +35,7 @@ public class CommandArticleServiceImpl implements CommandArticleService {
     @Override
     public String deleteArticle(ArticleDTO articleDTO) {
         ArticleEntity article = commandArticleRepository.findById(articleDTO.getArticleId()).get();
+
         if(article.getArticleDeleteStatus() == 0){
             return "이미 삭제된 게시글입니다.";
         } else{

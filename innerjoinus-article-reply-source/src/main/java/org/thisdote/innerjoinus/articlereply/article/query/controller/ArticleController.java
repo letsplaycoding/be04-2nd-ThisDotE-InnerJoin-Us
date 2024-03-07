@@ -1,14 +1,15 @@
 package org.thisdote.innerjoinus.articlereply.article.query.controller;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.thisdote.innerjoinus.articlereply.article.query.vo.ResponseArticleByUser;
 import org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO;
 import org.thisdote.innerjoinus.articlereply.article.query.service.ArticleService;
 import org.thisdote.innerjoinus.articlereply.article.query.vo.ResponseArticle;
+import org.thisdote.innerjoinus.articlereply.article.query.vo.ResponseQuestionArticle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +19,12 @@ import java.util.List;
 public class ArticleController {
     private ArticleService articleService;
 
+    private final ModelMapper mapper;
+
     @Autowired
-    public ArticleController(ArticleService articleService) {
+    public ArticleController(ArticleService articleService, ModelMapper mapper) {
         this.articleService = articleService;
+        this.mapper = mapper;
     }
 
     @GetMapping("/select")
@@ -32,14 +36,28 @@ public class ArticleController {
     }
 
     @GetMapping("/question")
-    public ResponseEntity<List<ResponseArticle>> selectAllQuestionArticle(){
+    public ResponseEntity<List<ResponseQuestionArticle>> selectAllQuestionArticle(){
         List<ArticleDTO> articleDTOList = articleService.selectAllQuestionArticle();
-        List<ResponseArticle> returnValue = articleDTOToTesponseOrder(articleDTOList);
+        List<ResponseQuestionArticle> returnValue = new ArrayList<>();
+
+        if (articleDTOList != null) {
+            returnValue = articleDTOList.stream().map(ArticleDTO -> mapper.map(ArticleDTO, ResponseQuestionArticle.class)).toList();
+        }
 
         return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 
+    @GetMapping("/select/article/{user_code}")
+    public ResponseEntity<List<ResponseArticleByUser>> selectArticleByUser(@PathVariable("user_code") int user_code){
+        List<ArticleDTO> articleDTOList = articleService.selectArticleByUser(user_code);
+        List<ResponseArticleByUser> returnValue = new ArrayList<>();
 
+        if (articleDTOList != null) {
+            returnValue = articleDTOList.stream().map(ArticleDTO -> mapper.map(ArticleDTO, ResponseArticleByUser.class)).toList();
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
+    }
 
 
     private List<ResponseArticle> articleDTOToTesponseOrder(List<ArticleDTO> articleDTOList) {
