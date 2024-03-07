@@ -1,12 +1,12 @@
-package org.thisdote.user.command.service;
+package org.thisdote.innerjoinus.user.command.service;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.thisdote.communityfordevelopers.user.command.entity.UserEntity;
-import org.thisdote.communityfordevelopers.user.command.repository.UserRepository;
-import org.thisdote.communityfordevelopers.user.dto.UserDTO;
+import org.thisdote.innerjoinus.user.command.entity.UserEntity;
+import org.thisdote.innerjoinus.user.command.repository.UserRepository;
+import org.thisdote.innerjoinus.user.dto.UserDTO;
 
 import java.util.Date;
 

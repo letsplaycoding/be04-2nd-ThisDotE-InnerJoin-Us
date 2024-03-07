@@ -1,10 +1,11 @@
-package org.thisdote.user.query;
+package org.thisdote.innerjoinus.user.query.service;
 
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.thisdote.communityfordevelopers.user.dto.UserDTO;
+import org.thisdote.innerjoinus.user.dto.UserDTO;
+import org.thisdote.innerjoinus.user.query.repository.UserMapper;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package org.thisdote.user.query;
+package org.thisdote.innerjoinus.user.query.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.thisdote.communityfordevelopers.user.dto.UserDTO;
+import org.thisdote.innerjoinus.user.dto.UserDTO;
 
 import java.util.List;
 

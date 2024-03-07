@@ -1,4 +1,4 @@
-package org.thisdote.user.command.entity;
+package org.thisdote.innerjoinus.user.command.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -48,7 +48,5 @@ public class UserEntity {
 
     @Column(name = "user_resign_status")
     private int userResignStatus;
-
-//    private StudyGroupMemberDTO studyGroupMemberDTO;
 
 }
