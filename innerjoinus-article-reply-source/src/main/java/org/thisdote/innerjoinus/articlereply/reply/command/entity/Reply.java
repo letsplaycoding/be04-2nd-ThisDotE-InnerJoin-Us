@@ -1,4 +1,4 @@
-package org.thisdote.innerjoinus.articlereply.reply.aggregate;
+package org.thisdote.innerjoinus.articlereply.reply.command.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,14 +12,15 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class ReplyEntity {
+public class Reply {
+
     @Id
     @Column(name = "reply_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer replyId;
+    private int replyId;
 
     @Column(name = "reply_report_status")
-    private Integer replyReportStatus;
+    private int replyReportStatus;
 
     @Column(name = "reply_content")
     private String replyContent;
@@ -31,14 +32,14 @@ public class ReplyEntity {
     private Date replyLastUpdateDate;
 
     @Column(name = "reply_like_count")
-    private Integer replyLikeCount;
+    private int replyLikeCount;
 
     @Column(name = "user_code")
-    private Integer userCode;
+    private int userCode;
 
     @Column(name = "artcle_id")
-    private Integer articleId;
+    private int articleId;
 
     @Column(name = "reply_delete_status")
-    private Integer replyDeleteStatus;
+    private int replyDeleteStatus;
 }
