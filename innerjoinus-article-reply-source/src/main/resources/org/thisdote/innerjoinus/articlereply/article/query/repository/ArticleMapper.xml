@@ -61,7 +61,7 @@
              , A.ARTICLE_CREATE_DATE
              , A.ARTICLE_QUESTION_CATEGORY
           FROM ARTICLE A
-         WHERE ARTICLE_CATEGORY = '질문';
+         WHERE ARTICLE_CATEGORY = 2;
     </select>
 
     <select id="selectArticleByUser" resultMap="articleResultMap" parameterType="_int">
