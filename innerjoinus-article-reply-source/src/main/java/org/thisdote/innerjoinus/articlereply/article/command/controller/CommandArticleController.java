@@ -13,11 +13,11 @@ import org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO;
 @Slf4j
 @RestController
 @RequestMapping("/")
-public class ArticleController {
+public class CommandArticleController {
     private final ModelMapper modelMapper;
     private final CommandArticleService commandArticleService;
 
-    public ArticleController(ModelMapper modelMapper, CommandArticleService commandArticleService) {
+    public CommandArticleController(ModelMapper modelMapper, CommandArticleService commandArticleService) {
         this.modelMapper = modelMapper;
         this.commandArticleService = commandArticleService;
     }

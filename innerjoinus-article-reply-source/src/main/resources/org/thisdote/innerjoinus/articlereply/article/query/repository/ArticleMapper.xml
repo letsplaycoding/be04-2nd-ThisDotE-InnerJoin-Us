@@ -5,7 +5,7 @@
 
 <mapper namespace="org.thisdote.innerjoinus.articlereply.article.query.repository.ArticleMapper">
 
-    <resultMap id="articleResultMap" type="org/thisdote/innerjoinus/articlereply/article/dto/ArticleDTO">
+    <resultMap id="articleResultMap" type="org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO">
         <id property="articleId" column="USER_CODE"/>
         <result property="articleTitle" column="ARTICLE_TITLE"/>
         <result property="articleContent" column="ARTICLE_CONTENT"/>
@@ -16,13 +16,13 @@
         <result property="articleLikeCount" column="ARTICLE_LIKE_COUNT"/>
         <result property="articleReplyCount" column="ARTICLE_REPLY_COUNT"/>
         <result property="articleReportStatus" column="ARTICLE_REPORT_STATUS"/>
-        <result property="studyGroupMemberMaxCount" column="STUDYGROUP_MEMBER_MAX_COUNT"/>
-        <result property="studyGroupRecruitmentDeadline" column="STUDYGROUP_RECRUITMENT_DEADLINE"/>
+        <result property="studygroupMemberMaxCount" column="STUDYGROUP_MEMBER_MAX_COUNT"/>
+        <result property="studygroupRecruitmentDeadline" column="STUDYGROUP_RECRUITMENT_DEADLINE"/>
         <result property="articleQuestionCategory" column="ARTICLE_QUESTION_CATEGORY"/>
         <result property="userCode" column="USER_CODE"/>
-        <result property="studyGroupId" column="STUDYGROUP_ID"/>
-        <result property="studyGroupCurrentMemberCount" column="STUDYGROUP_CURRENT_MEMBER_COUNT"/>
-        <result property="studyGroupPendingMemberCount" column="STUDYGROUP_PENDING_MEMBER_COUNT"/>
+        <result property="studygroupId" column="STUDYGROUP_ID"/>
+        <result property="studygroupCurrentMemberCount" column="STUDYGROUP_CURRENT_MEMBER_COUNT"/>
+        <result property="studygroupPendingMemberCount" column="STUDYGROUP_PENDING_MEMBER_COUNT"/>
         <result property="articleDeleteStatus" column="ARTICLE_DELETE_STATUS"/>
     </resultMap>
 
@@ -148,8 +148,8 @@
         </trim>
     </select>
 
-    <resultMap id="articleInfoReply" type="org/thisdote/innerjoinus/articlereply/article/dto/ArticleDTO" extends="articleResultMap">
-        <association property="replyDTOList" javaType="org/thisdote/innerjoinus/articlereply/reply/dto/ReplyDTO">
+    <resultMap id="articleInfoReply" type="org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO" extends="articleResultMap">
+        <association property="replyDTOList" javaType="org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO">
             <id property="replyId" column="reply_id"/>
             <result property="replyReportStatus" column="reply_report_status"/>
             <result property="replyContent" column="reply_content"/>
