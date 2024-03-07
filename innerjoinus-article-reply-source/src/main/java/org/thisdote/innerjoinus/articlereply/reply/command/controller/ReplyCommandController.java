@@ -1,8 +1,9 @@
 package org.thisdote.innerjoinus.articlereply.reply.command.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-public class ReplyController {
+@RestController
+public class ReplyCommandController {
 
 }

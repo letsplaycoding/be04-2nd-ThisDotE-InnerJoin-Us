@@ -1,4 +1,4 @@
-package org.thisdote.innerjoinus.articlereply.reply.command.entity;
+package org.thisdote.innerjoinus.articlereply.reply.command.aggregate;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,7 +12,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Reply {
+public class ReplyCommandEntity {
 
     @Id
     @Column(name = "reply_id")

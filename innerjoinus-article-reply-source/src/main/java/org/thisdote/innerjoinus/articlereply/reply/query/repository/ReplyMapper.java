@@ -1,7 +1,7 @@
 package org.thisdote.innerjoinus.articlereply.reply.query.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.thisdote.communityfordevelopers.reply.dto.ReplyDTO;
+import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
 
 import java.util.List;
 

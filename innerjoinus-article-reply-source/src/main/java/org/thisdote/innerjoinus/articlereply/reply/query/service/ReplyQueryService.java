@@ -3,17 +3,18 @@ package org.thisdote.innerjoinus.articlereply.reply.query.service;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.thisdote.communityfordevelopers.reply.dto.ReplyDTO;
+import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
+import org.thisdote.innerjoinus.articlereply.reply.query.repository.ReplyMapper;
 
 import java.util.List;
 
 @Service
-public class ReplyService {
+public class ReplyQueryService {
 
     private final SqlSessionTemplate sqlSession;
 
     @Autowired
-    public ReplyService(SqlSessionTemplate sqlSession) {
+    public ReplyQueryService(SqlSessionTemplate sqlSession) {
         this.sqlSession = sqlSession;
     }
 
