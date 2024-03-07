@@ -1,9 +1,11 @@
 package org.thisdote.innerjoinus.articlereply.article.dto;
 
 import lombok.Data;
+import org.thisdote.communityfordevelopers.reply.dto.ReplyDTO;
 
 @Data
 public class ArticleDTO {
+
     private int articleId;
     private String articleTitle;
     private String articleContent;
@@ -22,4 +24,5 @@ public class ArticleDTO {
     private int studygroupCurrentMemberCount;
     private int studygroupPendingMemberCount;
     private int articleDeleteStatus;
+    private ReplyDTO replyDTOList;
 }
