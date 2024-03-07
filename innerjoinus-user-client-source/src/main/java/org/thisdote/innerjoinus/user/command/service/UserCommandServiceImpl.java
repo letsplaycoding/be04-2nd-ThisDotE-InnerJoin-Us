@@ -24,19 +24,20 @@ public class UserCommandServiceImpl implements UserCommandService {
 
     @Transactional
     @Override
-    public void registUser(UserDTO newUser) {
+    public UserDTO registUser(UserDTO newUser) {
         Date createdDate = new Date();
         newUser.setUserRegistDate(createdDate);
         newUser.setUserInfoUpdateDate(createdDate);
 
-        userRepository.save(mapper.map(newUser, UserEntity.class));
+        UserEntity returnedUser = userRepository.save(mapper.map(newUser, UserEntity.class));
+
+        return mapper.map(returnedUser, UserDTO.class);
     }
 
     @Transactional
     @Override
     public void modifyUser(UserDTO modifyUser) {
         UserEntity foundUser = userRepository.findById(modifyUser.getUserCode()).orElseThrow(IllegalAccessError::new);
-
         foundUser.setUserId(modifyUser.getUserId());
         foundUser.setUserPassword(modifyUser.getUserPassword());
         foundUser.setUserBirthday(modifyUser.getUserBirthday());

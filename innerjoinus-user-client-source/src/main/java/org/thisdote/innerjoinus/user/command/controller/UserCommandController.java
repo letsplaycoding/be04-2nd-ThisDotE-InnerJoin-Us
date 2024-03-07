@@ -19,29 +19,32 @@ import java.util.Map;
 public class UserCommandController {
 
     private final ModelMapper mapper;
-    private final UserQueryService userQueryService;
     private final UserCommandService userCommandService;
 
     @Autowired
     public UserCommandController(
             ModelMapper mapper,
-            UserQueryService userQueryService,
             UserCommandService userCommandService
     ) {
         this.mapper = mapper;
-        this.userQueryService = userQueryService;
         this.userCommandService = userCommandService;
     }
 
     @PostMapping("/regist")
-    public ResponseEntity<ResponseUser> registUser(@RequestBody RequestUser user) {
-        UserDTO userDTO = mapper.map(user, UserDTO.class);
+    public ResponseEntity<Map<String, Object>> registUser(@RequestBody RequestUser user) {
+        UserDTO requestSignUpUser = mapper.map(user, UserDTO.class);
+        UserDTO returnedUser = userCommandService.registUser(requestSignUpUser);
+        Map<String, Object> registrationResultResponse = new HashMap<>();
 
-        userCommandService.registUser(userDTO);
+        if (returnedUser == null) {
+            registrationResultResponse.put("message", "회원 등록 실패");
+        } else {
+            registrationResultResponse.put("resultCode", 200);
+            registrationResultResponse.put("message", "회원 등록 성공");
+            registrationResultResponse.put("result", mapper.map(returnedUser, ResponseUser.class));
+        }
 
-        ResponseUser responseUser = mapper.map(userDTO, ResponseUser.class);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(responseUser);
+        return ResponseEntity.status(HttpStatus.OK).body(registrationResultResponse);
     }
 
     @PostMapping("/modify")
@@ -50,10 +53,9 @@ public class UserCommandController {
 
         userCommandService.modifyUser(userDTO);
 
-//        ResponseUser responseUser = mapper.map(userDTO, ResponseUser.class);
         Map<String, Object> responseMap = new HashMap<>();
         responseMap.put("resultCode", 200);
-        responseMap.put("message", "수정 성공!");
+        responseMap.put("message", "회원 정보 수정 성공");
 
         return ResponseEntity.status(HttpStatus.OK).body(responseMap);
     }
@@ -64,10 +66,9 @@ public class UserCommandController {
 
         userCommandService.deleteUser(userDTO.getUserCode());
 
-//        ResponseUser responseUser = mapper.map(userDTO, ResponseUser.class);
         Map<String, Object> responseMap = new HashMap<>();
         responseMap.put("resultCode", 200);
-        responseMap.put("message", "삭제 성공!");
+        responseMap.put("message", "회원 탈퇴 성공");
 
         return ResponseEntity.status(HttpStatus.OK).body(responseMap);
     }
