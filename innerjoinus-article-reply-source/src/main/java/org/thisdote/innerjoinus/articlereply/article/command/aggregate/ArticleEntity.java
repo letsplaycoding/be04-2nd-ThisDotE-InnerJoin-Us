@@ -1,11 +1,11 @@
-package org.thisdote.innerjoinus.articlereply.article.aggregate;
+package org.thisdote.innerjoinus.articlereply.article.command.aggregate;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Data
 @Entity
 @Table(name = "article")
+@Data
 public class ArticleEntity {
     @Id
     @Column(name = "article_id")

@@ -59,6 +59,7 @@ dependencies {
 
     // config 서버 추가 후 config 서버 refresh를 위해 추가한 dependency
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 }
 
 dependencyManagement {
