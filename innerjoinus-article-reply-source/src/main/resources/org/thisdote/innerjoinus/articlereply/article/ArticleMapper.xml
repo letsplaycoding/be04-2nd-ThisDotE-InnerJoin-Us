@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.thisdote.innerjoinus.articlereply.article.query.repository.ArticleMapper">
+
+    <resultMap id="articleResultMap" type="org/thisdote/innerjoinus/articlereply/article/dto/ArticleDTO">
+        <id property="articleId" column="USER_CODE"/>
+        <result property="articleTitle" column="ARTICLE_TITLE"/>
+        <result property="articleContent" column="ARTICLE_CONTENT"/>
+        <result property="articleCategory" column="ARTICLE_CATEGORY"/>
+        <result property="articleCreateDate" column="ARTICLE_CREATE_DATE"/>
+        <result property="articleLastUpdateDate" column="ARTICLE_LAST_UPDATE_DATE"/>
+        <result property="articleViewCount" column="ARTICLE_VIEW_COUNT"/>
+        <result property="articleLikeCount" column="ARTICLE_LIKE_COUNT"/>
+        <result property="articleReplyCount" column="ARTICLE_REPLY_COUNT"/>
+        <result property="articleReportStatus" column="ARTICLE_REPORT_STATUS"/>
+        <result property="studyGroupMemberMaxCount" column="STUDYGROUP_MEMBER_MAX_COUNT"/>
+        <result property="studyGroupRecruitmentDeadline" column="STUDYGROUP_RECRUITMENT_DEADLINE"/>
+        <result property="articleQuestionCategory" column="ARTICLE_QUESTION_CATEGORY"/>
+        <result property="userCode" column="USER_CODE"/>
+        <result property="studyGroupId" column="STUDYGROUP_ID"/>
+        <result property="studyGroupCurrentMemberCount" column="STUDYGROUP_CURRENT_MEMBER_COUNT"/>
+        <result property="studyGroupPendingMemberCount" column="STUDYGROUP_PENDING_MEMBER_COUNT"/>
+        <result property="articleDeleteStatus" column="ARTICLE_DELETE_STATUS"/>
+    </resultMap>
+
+    <select id="selectAllArticle" resultMap="articleResultMap">
+        SELECT
+               A.ARTICLE_ID
+             , A.ARTICLE_TITLE
+             , A.ARTICLE_CONTENT
+             , A.ARTICLE_CATEGORY
+             , A.ARTICLE_CREATE_DATE
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_REPORT_STATUS
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.ARTICLE_QUESTION_CATEGORY
+             , A.USER_CODE
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
+          FROM ARTICLE A
+    </select>
+    <select id="selectAllQuestionArticle" resultMap="articleResultMap">
+        SELECT
+               A.ARTICLE_ID
+             , A.ARTICLE_TITLE
+             , A.USER_CODE
+             , A.ARTICLE_CATEGORY
+             , A.ARTICLE_CONTENT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_CREATE_DATE
+             , A.ARTICLE_QUESTION_CATEGORY
+          FROM ARTICLE A
+         WHERE ARTICLE_CATEGORY = '질문';
+    </select>
+
+    <select id="selectArticleByUser" resultMap="articleResultMap" parameterType="_int">
+        SELECT
+               A.ARTICLE_ID
+             , A.ARTICLE_TITLE
+             , A.ARTICLE_CONTENT
+             , A.ARTICLE_CATEGORY
+             , A.ARTICLE_CREATE_DATE
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_REPORT_STATUS
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.ARTICLE_QUESTION_CATEGORY
+             , A.USER_CODE
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
+          FROM ARTICLE A
+         WHERE USER_CODE = #{userCode}
+    </select>
+
+    <select id="selectArticleByCategory" resultMap="articleResultMap" parameterType="_int">
+        SELECT
+               A.ARTICLE_ID
+             , A.ARTICLE_TITLE
+             , A.ARTICLE_CONTENT
+             , A.ARTICLE_CATEGORY
+             , A.ARTICLE_CREATE_DATE
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_REPORT_STATUS
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.ARTICLE_QUESTION_CATEGORY
+             , A.USER_CODE
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
+          FROM ARTICLE A
+         WHERE ARTICLE_CATEGORY = #{articleCategory}
+    </select>
+
+    <select id="selectArticleByCriteria"
+            resultMap="articleResultMap"
+            parameterType="hashmap">
+        SELECT
+               A.ARTICLE_ID
+             , A.ARTICLE_TITLE
+             , A.ARTICLE_CONTENT
+             , A.ARTICLE_CATEGORY
+             , A.ARTICLE_CREATE_DATE
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_REPORT_STATUS
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.ARTICLE_QUESTION_CATEGORY
+             , A.USER_CODE
+             , A.STUDYGROUP_ID
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
+          FROM ARTICLE A
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+            <if test="CATEGORY != null">
+                A.ARTICLE_CATEGORY = #{CATEGORY}
+            </if>
+            <if test="TITLE != null">
+                AND A.ARTICLE_TITLE LIKE CONCAT('%', #{TITLE}, '%')
+            </if>
+            <if test="WRITER != null">
+                AND A.USER_CODE = #{WRITER}
+            </if>
+        </trim>
+    </select>
+
+    <resultMap id="articleInfoReply" type="org/thisdote/innerjoinus/articlereply/article/dto/ArticleDTO" extends="articleResultMap">
+        <association property="replyDTOList" javaType="org/thisdote/innerjoinus/articlereply/reply/dto/ReplyDTO">
+            <id property="replyId" column="reply_id"/>
+            <result property="replyReportStatus" column="reply_report_status"/>
+            <result property="replyContent" column="reply_content"/>
+            <result property="replyCreatedDate" column="reply_create_date"/>
+            <result property="replyLastUpdateDate" column="reply_last_update_date"/>
+            <result property="replyLikeCount" column="reply_like_count"/>
+            <result property="userCode" column="REPLY_USER_CODE"/>
+        </association>
+    </resultMap>
+
+    <select id="selectStudyArticleInfo" resultMap="articleInfoReply" parameterType="_int">
+        SELECT
+               A.ARTICLE_ID
+             , A.USER_CODE
+             , A.ARTICLE_CATEGORY
+             , A.ARTICLE_CONTENT
+             , A.ARTICLE_LIKE_COUNT
+             , A.ARTICLE_REPLY_COUNT
+             , A.ARTICLE_VIEW_COUNT
+             , A.ARTICLE_LAST_UPDATE_DATE
+             , A.STUDYGROUP_MEMBER_MAX_COUNT
+             , A.STUDYGROUP_CURRENT_MEMBER_COUNT
+             , A.STUDYGROUP_RECRUITMENT_DEADLINE
+             , A.STUDYGROUP_PENDING_MEMBER_COUNT
+             , A.ARTICLE_DELETE_STATUS
+             , B.REPLY_ID
+             , B.REPLY_CONTENT
+             , B.USER_CODE AS REPLY_USER_CODE
+             , B.REPLY_CREATE_DATE
+             , B.REPLY_CREATE_DATE
+             , B.REPLY_LAST_UPDATE_DATE
+             , B.REPLY_LIKE_COUNT
+          FROM ARTICLE A
+         INNER JOIN REPLY B ON (A.ARTICLE_ID = B.ARTICLE_ID)
+         WHERE A.ARTICLE_ID = #{ articleId }
+    </select>
+
+</mapper>
