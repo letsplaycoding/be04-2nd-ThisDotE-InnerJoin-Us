@@ -8,16 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
-@MapperScan(basePackages = "org.thisdote.innerjoinus", annotationClass = Mapper.class)
+@MapperScan(basePackages = "org.thisdote.innerjoinus.studygroup", annotationClass = Mapper.class)
 public class MybatisConfiguration {
 
-    @Bean
-    public ModelMapper getModelMapper() {
-        return new ModelMapper();
-    }
-
-    @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 }
