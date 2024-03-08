@@ -8,4 +8,6 @@ public interface CommandArticleService {
     ArticleDTO modifyArticle(ArticleDTO modifyArticle);
 
     ArticleDTO registArticle(ArticleDTO articleDTO);
+
+    ArticleDTO getUserCodeArticle(int userCode);
 }

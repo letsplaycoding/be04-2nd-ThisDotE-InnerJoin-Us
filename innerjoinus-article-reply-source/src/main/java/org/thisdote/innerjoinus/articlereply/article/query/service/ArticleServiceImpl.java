@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO;
 import org.thisdote.innerjoinus.articlereply.article.query.repository.ArticleMapper;
-
+import org.thisdote.innerjoinus.articlereply.client.ArticleServiceClient;
 
 import java.util.List;
 import java.util.Map;
