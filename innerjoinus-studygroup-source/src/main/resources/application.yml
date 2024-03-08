@@ -13,7 +13,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto:
+      ddl-auto: create
     show-sql: true
     database: mysql
     properties:
