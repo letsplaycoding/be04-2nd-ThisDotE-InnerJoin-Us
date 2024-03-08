@@ -9,6 +9,8 @@ import org.thisdote.innerjoinus.studygroup_member.command.entity.StudyGroupMembe
 import org.thisdote.innerjoinus.studygroup_member.command.repository.StudyGroupMemberCommandRepository;
 import org.thisdote.innerjoinus.studygroup_member.dto.StudyGroupMemberDTO;
 
+import java.util.Date;
+
 
 @Service
 public class StudyGroupMemberCommandServiceImpl implements StudyGroupMemberCommandService{
@@ -25,10 +27,14 @@ public class StudyGroupMemberCommandServiceImpl implements StudyGroupMemberComma
 
     @Transactional
     @Override
-    public void registStudyGroupMember(StudyGroupMemberDTO newStudyGroupMember) {
+    public StudyGroupMemberDTO registStudyGroupMember(StudyGroupMemberDTO newStudyGroupMember) {
+
+        Date enrollDate = new Date();
+        newStudyGroupMember.setStudyGroupRegistDate(enrollDate);
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         StudyGroupMemberEntity studyGroupMemberEntity = modelMapper.map(newStudyGroupMember, StudyGroupMemberEntity.class);
-             studyGroupMemberCommandRepository.save(studyGroupMemberEntity);
+        StudyGroupMemberEntity entityFromDB = studyGroupMemberCommandRepository.save(studyGroupMemberEntity);
+        return modelMapper.map(entityFromDB, StudyGroupMemberDTO.class);
     }
 
     @Transactional

@@ -10,7 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class ResponseStudyGroupMember {
+public class ResponseRegistStudyGroupMember {
 
     private int studyGroupId;
     private int studyGroupRole;

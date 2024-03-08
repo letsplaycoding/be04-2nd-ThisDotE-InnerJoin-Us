@@ -37,18 +37,24 @@ public class StudyGroupMemberCommandController {
 
     // 스터디원 추가하기 - regist(insert)
     @PostMapping("/member/regist")
-    public ResponseEntity<ResponseStudyGroupMember> registStudyGroupMember
-                                                    (@RequestBody RequestStudyGroupMember studyGroupMember) {
-
+    public ResponseEntity<ResponseRegistStudyGroupMember> registStudyGroupMember
+                                                    (@RequestBody RequestRegistStudyGroupMember studyGroupMember) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         StudyGroupMemberDTO studyGroupMemberDTO = modelMapper.map(studyGroupMember, StudyGroupMemberDTO.class);
-        System.out.println("studyGroupMemberDTO = " + studyGroupMemberDTO);
 
-        studyGroupMemberCommandService.registStudyGroupMember(studyGroupMemberDTO);
-        ResponseStudyGroupMember responseStudyGroupMember = modelMapper.map(studyGroupMemberDTO,
-                                                                            ResponseStudyGroupMember.class);
+        StudyGroupMemberDTO returnedDTO = studyGroupMemberCommandService.registStudyGroupMember(studyGroupMemberDTO);
 
-        return ResponseEntity.status(HttpStatus.OK).body(responseStudyGroupMember);
+        ResponseRegistStudyGroupMember responseRegistStudyGroupMember = new ResponseRegistStudyGroupMember();
+
+        responseRegistStudyGroupMember.setStudyGroupId(studyGroupMember.getStudyGroupId());
+        responseRegistStudyGroupMember.setStudyGroupRole(studyGroupMember.getStudyGroupRole());
+        responseRegistStudyGroupMember.setUserCode(studyGroupMember.getUserCode());
+
+        responseRegistStudyGroupMember.setStudyGroupRegistDate(studyGroupMemberDTO.getStudyGroupRegistDate());
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(modelMapper.map(returnedDTO, ResponseRegistStudyGroupMember.class));
+
+
     }
 
     // 스터디원 수정하기 - modify(update)
