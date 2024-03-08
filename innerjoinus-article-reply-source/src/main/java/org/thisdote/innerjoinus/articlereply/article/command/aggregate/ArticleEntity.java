@@ -39,7 +39,7 @@ public class ArticleEntity {
     private Integer articleQuestionCategory;
     @Column(name = "user_code")
     private Integer userCode;
-    @Column(name = "studygroup_id")
+    @Column
     private Integer studygroupId;
     @Column(name = "studygroup_current_member_count")
     private Integer studygroupCurrentMemberCount;
