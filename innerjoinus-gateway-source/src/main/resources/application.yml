@@ -22,14 +22,14 @@ spring:
             - RewritePath=/article-reply/(?<segment>.*), /$\{segment}
 
         - id: studygroup-member
-          uri: lb://INNERJOINUS-ARTICLEREPLY
+          uri: lb://INNERJOINUS-STUDYGROUP-MEMBER
           predicates:
             - Path=/studygroup-member/**
           filters:
             - RewritePath=/studygroup-member/(?<segment>.*), /$\{segment}
 
         - id: user
-          uri: lb://INNERJOINUS-ARTICLEREPLY
+          uri: lb://INNERJOINUS-USER
           predicates:
             - Path=/user/**
           filters:
