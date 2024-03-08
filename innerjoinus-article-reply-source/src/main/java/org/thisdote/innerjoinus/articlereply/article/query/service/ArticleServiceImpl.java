@@ -37,6 +37,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<ArticleDTO> selectStudyArticleInfo(int articleId, int studyCate) {return sqlSession.getMapper(ArticleMapper.class).selectStudyArticleInfo(articleId, studyCate);}
 
+    @Override
     public List<ArticleDTO> selectArticleByCriteria(Map<String, Object> criteria) {
         return sqlSession.getMapper(ArticleMapper.class).selectArticleByCriteria(criteria);
     }
