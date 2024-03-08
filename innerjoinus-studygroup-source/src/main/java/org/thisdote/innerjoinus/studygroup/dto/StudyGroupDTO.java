@@ -19,4 +19,5 @@ public class StudyGroupDTO {
     private Date studyGroupStudyTime;
     private String studyGroupContent;
     private int studyGroupDeleteStatus;
+
 }

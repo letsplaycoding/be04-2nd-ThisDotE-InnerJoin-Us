@@ -2,18 +2,21 @@ package org.thisdote.innerjoinus.studygroup.dto;
 
 import lombok.*;
 
+import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
 public class StudyGroupCommandDTO {
+
     private int studygroupId;
     private int studygroupType;
-    private java.util.Date studygroupCreateDate;
+    private Date studygroupCreateDate;
     private int studygroupMemberCount;
     private int studygroupActivationStatus;
-    private java.util.Date studygroupStudyTime;
+    private Date studygroupStudyTime;
     private String studygroupContent;
     private int studygroupDeleteStatus;
 

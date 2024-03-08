@@ -3,6 +3,8 @@ package org.thisdote.innerjoinus.studygroup.command.vo;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -11,10 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class RequestStudyGroup {
     private int studygroupType;
-    private java.util.Date studygroupCreateDate;
+    private Date studygroupCreateDate;
     private int studygroupMemberCount;
     private int studygroupActivationStatus;
-    private java.util.Date studygroupStudyTime;
+    private Date studygroupStudyTime;
     private String studygroupContent;
     private int studygroupDeleteStatus;
 }

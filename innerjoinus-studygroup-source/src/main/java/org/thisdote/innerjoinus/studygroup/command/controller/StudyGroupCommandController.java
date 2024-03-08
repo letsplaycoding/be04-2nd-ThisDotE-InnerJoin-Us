@@ -44,7 +44,7 @@ public class StudyGroupCommandController {
 
         System.out.println("studyGroupDTO = " + studyGroupCommandDTO);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(responseStudyGroup);
+        return ResponseEntity.status(HttpStatus.CREATED).body(mapper.map(studyGroupCommandDTO,ResponseStudyGroup.class));
     }
 
     /* 필기. Update */
