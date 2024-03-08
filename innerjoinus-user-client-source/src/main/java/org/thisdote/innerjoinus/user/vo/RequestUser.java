@@ -1,8 +1,6 @@
 package org.thisdote.innerjoinus.user.vo;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
-import org.thisdote.innerjoinus.user.dto.StudyGroupMemberDTO;
 
 import java.util.Date;
 

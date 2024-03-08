@@ -3,7 +3,7 @@ package org.thisdote.innerjoinus.user.command.service;
 import org.thisdote.innerjoinus.user.dto.UserDTO;
 
 public interface UserCommandService {
-    void registUser(UserDTO newUser);
+    UserDTO registUser(UserDTO newUser);
     void modifyUser(UserDTO modifyUser);
     void deleteUser(int userCode);
 }
