@@ -65,13 +65,7 @@ public class StudyGroupCommandService {
     StudyGroupEntity studyGroup = studygroupRepository
             .findById(studyGroupCommandDTO.getStudygroupId()).get();
         studyGroup.setStudygroupId(studyGroupCommandDTO.getStudygroupId());
-        studyGroup.setStudygroupType(0);
-        studyGroup.setStudygroupCreateDate(new Date());
-        studyGroup.setStudygroupMemberCount(0);
-        studyGroup.setStudygroupActivationStatus(0);
-        studyGroup.setStudygroupStudyTime(new Date());
-        studyGroup.setStudygroupContent("");
-        studyGroup.setStudygroupDeleteStatus(1);
+        studyGroup.setStudygroupDeleteStatus(studyGroupCommandDTO.getStudygroupDeleteStatus());
 
     }
 }
