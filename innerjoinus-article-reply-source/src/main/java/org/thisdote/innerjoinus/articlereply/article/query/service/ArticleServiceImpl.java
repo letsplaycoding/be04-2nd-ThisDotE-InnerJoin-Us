@@ -19,19 +19,23 @@ public class ArticleServiceImpl implements ArticleService {
         this.sqlSession = sqlSession;
     }
 
+    @Override
     public List<ArticleDTO> selectAllArticle() {
         return sqlSession.getMapper(ArticleMapper.class).selectAllArticle();
     }
 
+    @Override
     public List<ArticleDTO> selectAllQuestionArticle() {
         return sqlSession.getMapper(ArticleMapper.class).selectAllQuestionArticle();
     }
 
+    @Override
     public List<ArticleDTO> selectArticleByUser(int userCode) {
         return sqlSession.getMapper(ArticleMapper.class).selectArticleByUser(userCode);
     }
 
-    public List<ArticleDTO> selectStudyArticleInfo(int articleId) {return sqlSession.getMapper(ArticleMapper.class).selectStudyArticleInfo(articleId);}
+    @Override
+    public List<ArticleDTO> selectStudyArticleInfo(int articleId, int studyCate) {return sqlSession.getMapper(ArticleMapper.class).selectStudyArticleInfo(articleId, studyCate);}
 
     public List<ArticleDTO> selectArticleByCriteria(Map<String, Object> criteria) {
         return sqlSession.getMapper(ArticleMapper.class).selectArticleByCriteria(criteria);
