@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: swcamp-innerjoinus-studygroup
+    name: innerjoinus-studygroup
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver

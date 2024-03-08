@@ -12,9 +12,12 @@ import java.util.Date;
 @Getter
 @ToString
 public class RequestModifyStudyGroup {
+    private int studygroupId;
     private int studygroupType;
     private int studygroupMemberCount;
+    private Date studygroupCreateDate;
     private int studygroupActivationStatus;
     private Date studygroupStudyTime;
     private String studygroupContent;
+    private int studygroupDeleteStatus;
 }

@@ -1,12 +1,14 @@
 package org.thisdote.innerjoinus.studygroupservice.command.vo;
 
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
 @Getter
 @ToString
+@Component
 public class ResponseStudyGroup {
     private int studygroupType;
     private java.util.Date studygroupCreateDate;

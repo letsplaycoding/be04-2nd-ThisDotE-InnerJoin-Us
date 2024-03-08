@@ -39,12 +39,15 @@ public class StudyGroupCommandController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseStudyGroup);
     }
-    @PostMapping("/studygroup/update/{studygroupId}")
-    public ResponseEntity<ResponseModifyStudyGroup> modifyArticle(@RequestBody RequestModifyStudyGroup modifyStudyGroup){
+
+    /* 필기. Update */
+    @PostMapping("/studygroup/update")
+    public ResponseEntity<ResponseModifyStudyGroup> modifyStudyGroup(@RequestBody RequestModifyStudyGroup modifyStudyGroup){
         StudyGroupCommandDTO studyGroupCommandDTO = mapper.map(modifyStudyGroup, StudyGroupCommandDTO.class);
+        System.out.println("studyGroupCommandDTO = " + studyGroupCommandDTO);
         studyGroupCommandService.updateStudyGroup(studyGroupCommandDTO);
 
-        ResponseModifyStudyGroup responseModifyStudyGroup = new ResponseModifyStudyGroup();
+        ResponseModifyStudyGroup responseModifyStudyGroup = mapper.map(studyGroupCommandDTO,ResponseModifyStudyGroup.class);
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseModifyStudyGroup);
     }

@@ -8,6 +8,8 @@ import org.thisdote.innerjoinus.studygroupservice.command.entity.StudyGroupEntit
 import org.thisdote.innerjoinus.studygroupservice.command.repository.StudyGroupRepository;
 import org.thisdote.innerjoinus.studygroupservice.dto.StudyGroupCommandDTO;
 
+import java.util.Date;
+
 @Service
 public class StudyGroupCommandService {
 
@@ -46,12 +48,15 @@ public class StudyGroupCommandService {
 
     @Transactional
     public void updateStudyGroup(StudyGroupCommandDTO studyGroupCommandDTO) {
-        StudyGroupEntity studyGroup = studygroupRepository.findById(studyGroupCommandDTO.getStudygroupId()).get();
+        StudyGroupEntity studyGroup = studygroupRepository
+                .findById(studyGroupCommandDTO.getStudygroupId()).get();
+        studyGroup.setStudygroupId(studyGroupCommandDTO.getStudygroupId());
         studyGroup.setStudygroupType(studyGroupCommandDTO.getStudygroupType());
+        studyGroup.setStudygroupCreateDate(studyGroupCommandDTO.getStudygroupCreateDate());
         studyGroup.setStudygroupMemberCount(studyGroupCommandDTO.getStudygroupMemberCount());
         studyGroup.setStudygroupActivationStatus(studyGroupCommandDTO.getStudygroupActivationStatus());
         studyGroup.setStudygroupStudyTime(studyGroupCommandDTO.getStudygroupStudyTime());
         studyGroup.setStudygroupContent(studyGroupCommandDTO.getStudygroupContent());
+        studyGroup.setStudygroupDeleteStatus(studyGroupCommandDTO.getStudygroupDeleteStatus());
     }
-
 }
