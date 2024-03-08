@@ -39,5 +39,18 @@ public class ReplyCommandServiceImpl implements ReplyCommandService{
 
         replyCommandRepository.save(replyCommandEntity);
         return replyDTO;
+
+    }
+
+    @Transactional
+    @Override
+    public String deleteReply(ReplyDTO replyDTO) {
+        ReplyCommandEntity reply = replyCommandRepository.findById(replyDTO.getReplyId()).get();
+        if (reply.getReplyDeleteStatus() == 1) {    // 1이 삭제, 0이 미삭제
+            return "이미 삭제된 댓글입니다.";
+        } else {
+            reply.setReplyDeleteStatus(replyDTO.getReplyDeleteStatus());
+            return "댓글이 삭제되었습니다.";
+        }
     }
 }
