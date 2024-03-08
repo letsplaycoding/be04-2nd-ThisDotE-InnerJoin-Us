@@ -1,13 +1,11 @@
-package org.thisdote.innerjoinus.articlereply.article.dto;
+package org.thisdote.innerjoinus.articlereply.article.query.vo;
 
 import lombok.Data;
-import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
+
 import java.util.Date;
-import java.util.List;
 
 @Data
-public class ArticleDTO {
-
+public class ResponseSelectEnum {
     private int articleId;
     private String articleTitle;
     private String articleContent;
@@ -26,5 +24,4 @@ public class ArticleDTO {
     private int studygroupCurrentMemberCount;
     private int studygroupPendingMemberCount;
     private int articleDeleteStatus;
-    private List<ReplyDTO> replyDTOList;
 }
