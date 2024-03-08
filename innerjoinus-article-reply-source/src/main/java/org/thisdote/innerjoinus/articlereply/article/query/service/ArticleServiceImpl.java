@@ -41,9 +41,5 @@ public class ArticleServiceImpl implements ArticleService {
     public List<ArticleDTO> selectArticleByCriteria(Map<String, Object> criteria) {
         return sqlSession.getMapper(ArticleMapper.class).selectArticleByCriteria(criteria);
     }
-
-    public List<ArticleDTO> selectArticleByCategory(int articleCategory) {
-        return sqlSession.getMapper(ArticleMapper.class).selectArticleByCategory(articleCategory);
-    }
 }
 
