@@ -7,10 +7,7 @@ import org.thisdote.innerjoinus.studygroup_member.query.vo.ResponseStudyGroupMem
 
 import java.util.List;
 
-@FeignClient(name = "innerjoinus-studygroup-member", url = "localhost:8080")
+@FeignClient(name = "innerjoinus-studygroup-member", url = "localhost:8888")
 public class StudyGroupMemberServiceClient {
-
-//    @GetMapping("/studygroup-member/studygroup_member/")
-//    List<ResponseStudyGroupMember> getStudyGroupMember (@PathVariable("studyGroupMemberId") String studyGroupMemberId)
 
 }
