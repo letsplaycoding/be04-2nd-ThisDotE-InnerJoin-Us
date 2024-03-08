@@ -32,11 +32,16 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+    implementation 'org.modelmapper:modelmapper:3.2.0'
 }
 
 dependencyManagement {

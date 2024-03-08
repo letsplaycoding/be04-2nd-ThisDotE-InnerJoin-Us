@@ -1,0 +1,36 @@
+server:
+  port: 8000
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      routes:
+        - id: article-reply
+          uri: lb://INNERJOINUS-ARTICLEREPLY
+          predicates:
+            - Path=/article-reply/**
+          filters:
+            - RewritePath=/article-reply/(?<segment>.*), /$\{segment}
+
+        - id: studygroup-member
+          uri: lb://INNERJOINUS-ARTICLEREPLY
+          predicates:
+            - Path=/studygroup-member/**
+          filters:
+            - RewritePath=/studygroup-member/(?<segment>.*), /$\{segment}
+
+        - id: user
+          uri: lb://INNERJOINUS-ARTICLEREPLY
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<segment>.*), /$\{segment}
