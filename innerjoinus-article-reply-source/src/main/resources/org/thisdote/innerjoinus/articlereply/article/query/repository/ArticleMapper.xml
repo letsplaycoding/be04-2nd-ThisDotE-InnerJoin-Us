@@ -6,7 +6,7 @@
 <mapper namespace="org.thisdote.innerjoinus.articlereply.article.query.repository.ArticleMapper">
 
     <resultMap id="articleResultMap" type="org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO">
-        <id property="articleId" column="USER_CODE"/>
+        <id property="articleId" column="ARTICLE_ID"/>
         <result property="articleTitle" column="ARTICLE_TITLE"/>
         <result property="articleContent" column="ARTICLE_CONTENT"/>
         <result property="articleCategory" column="ARTICLE_CATEGORY"/>
