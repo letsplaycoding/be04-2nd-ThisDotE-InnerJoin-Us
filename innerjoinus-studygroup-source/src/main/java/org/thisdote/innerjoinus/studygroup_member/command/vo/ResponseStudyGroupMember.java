@@ -3,7 +3,7 @@ package org.thisdote.innerjoinus.studygroup_member.command.vo;
 
 import lombok.*;
 
-import java.sql.Date;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor

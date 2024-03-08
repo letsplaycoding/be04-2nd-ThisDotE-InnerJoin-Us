@@ -9,11 +9,11 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class RequestStudyGroupMember {
+public class RequestDeleteStudyGroupMember {
 
+    private int studyGroupMemberId;
     private int studyGroupId;
     private int studyGroupRole;
     private Date studyGroupRegistDate;
     private int userCode;
-
 }
