@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: innerjoinus-studygroup
+    name: innerjoinus-studygroup-member
 
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
