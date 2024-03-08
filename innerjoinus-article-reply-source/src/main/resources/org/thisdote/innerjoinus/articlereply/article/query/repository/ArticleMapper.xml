@@ -149,7 +149,7 @@
     </select>
 
     <resultMap id="articleInfoReply" type="org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO" extends="articleResultMap">
-        <association property="replyDTOList" javaType="org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO">
+        <collection property="replyDTOList" ofType="org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO">
             <id property="replyId" column="reply_id"/>
             <result property="replyReportStatus" column="reply_report_status"/>
             <result property="replyContent" column="reply_content"/>
@@ -157,12 +157,13 @@
             <result property="replyLastUpdateDate" column="reply_last_update_date"/>
             <result property="replyLikeCount" column="reply_like_count"/>
             <result property="userCode" column="REPLY_USER_CODE"/>
-        </association>
+        </collection>
     </resultMap>
 
     <select id="selectStudyArticleInfo" resultMap="articleInfoReply" parameterType="_int">
         SELECT
                A.ARTICLE_ID
+             , A.ARTICLE_TITLE
              , A.USER_CODE
              , A.ARTICLE_CATEGORY
              , A.ARTICLE_CONTENT
@@ -174,17 +175,16 @@
              , A.STUDYGROUP_CURRENT_MEMBER_COUNT
              , A.STUDYGROUP_RECRUITMENT_DEADLINE
              , A.STUDYGROUP_PENDING_MEMBER_COUNT
-             , A.ARTICLE_DELETE_STATUS
              , B.REPLY_ID
              , B.REPLY_CONTENT
              , B.USER_CODE AS REPLY_USER_CODE
-             , B.REPLY_CREATE_DATE
              , B.REPLY_CREATE_DATE
              , B.REPLY_LAST_UPDATE_DATE
              , B.REPLY_LIKE_COUNT
           FROM ARTICLE A
          INNER JOIN REPLY B ON (A.ARTICLE_ID = B.ARTICLE_ID)
          WHERE A.ARTICLE_ID = #{ articleId }
+           AND A.ARTICLE_CATEGORY = #{ studyCate }
     </select>
 
 </mapper>

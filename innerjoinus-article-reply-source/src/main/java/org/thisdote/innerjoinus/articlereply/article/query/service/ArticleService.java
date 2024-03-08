@@ -9,4 +9,6 @@ public interface ArticleService {
     List<ArticleDTO> selectArticleByUser(int userCode);
 
     List<ArticleDTO> selectAllQuestionArticle();
+
+    List<ArticleDTO> selectStudyArticleInfo(int articleId, int studyCate);
 }

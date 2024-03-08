@@ -14,7 +14,7 @@ public interface ArticleMapper {
 
     List<ArticleDTO> selectArticleByUser(int userCode);
 
-    List<ArticleDTO> selectStudyArticleInfo(int articleId);
+    List<ArticleDTO> selectStudyArticleInfo(int articleId, int studyCate);
 
     List<ArticleDTO> selectArticleByCriteria(Map<String, Object> criteria);
 
