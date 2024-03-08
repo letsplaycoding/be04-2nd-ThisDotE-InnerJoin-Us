@@ -13,11 +13,11 @@ import org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO;
 @Slf4j
 @RestController
 @RequestMapping("/")
-public class ArticleController {
+public class CommandArticleController {
     private final ModelMapper modelMapper;
     private final CommandArticleService commandArticleService;
 
-    public ArticleController(ModelMapper modelMapper, CommandArticleService commandArticleService) {
+    public CommandArticleController(ModelMapper modelMapper, CommandArticleService commandArticleService) {
         this.modelMapper = modelMapper;
         this.commandArticleService = commandArticleService;
     }
@@ -29,11 +29,10 @@ public class ArticleController {
     public ResponseEntity<ResponseRegistArticle> registArticle(@RequestBody RequestRegistArticle registArticle){
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         ArticleDTO articleDTO = modelMapper.map(registArticle, ArticleDTO.class);
-        commandArticleService.registArticle(articleDTO);
+        ArticleDTO article = commandArticleService.registArticle(articleDTO);
 
         ResponseRegistArticle responseRegistArticle = new ResponseRegistArticle();
-        responseRegistArticle.setMessage(articleDTO.getArticleTitle());
-        System.out.println("responseRegistArticle = " + responseRegistArticle);
+        responseRegistArticle.setMessage(article.toString());
         return  ResponseEntity.status(HttpStatus.CREATED).body(responseRegistArticle);
     }
 
@@ -55,10 +54,10 @@ public class ArticleController {
     @PostMapping("/modify_article")
     public ResponseEntity<ResponseModifyArticle> modifyArticle(@RequestBody RequestModifyArticle modifyArticle){
         ArticleDTO articleDTO = modelMapper.map(modifyArticle, ArticleDTO.class);
-        commandArticleService.modifyArticle(articleDTO);
+        ArticleDTO article = commandArticleService.modifyArticle(articleDTO);
 
         ResponseModifyArticle responseModifyArticle = new  ResponseModifyArticle();
-        responseModifyArticle.setMessage("수정 완료");
+        responseModifyArticle.setMessage(article.toString());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseModifyArticle);
     }
 }

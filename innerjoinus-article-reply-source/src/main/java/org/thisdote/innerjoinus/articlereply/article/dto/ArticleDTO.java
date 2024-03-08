@@ -2,8 +2,8 @@ package org.thisdote.innerjoinus.articlereply.article.dto;
 
 import lombok.Data;
 import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
-
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class ArticleDTO {
@@ -26,5 +26,5 @@ public class ArticleDTO {
     private int studygroupCurrentMemberCount;
     private int studygroupPendingMemberCount;
     private int articleDeleteStatus;
-    private ReplyDTO replyDTOList;
+    private List<ReplyDTO> replyDTOList;
 }

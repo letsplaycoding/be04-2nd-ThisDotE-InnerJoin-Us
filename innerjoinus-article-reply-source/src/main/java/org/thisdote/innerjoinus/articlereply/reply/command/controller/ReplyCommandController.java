@@ -8,7 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.thisdote.innerjoinus.articlereply.reply.command.service.ReplyCommandService;
+import org.thisdote.innerjoinus.articlereply.reply.command.vo.RequestDeleteReply;
 import org.thisdote.innerjoinus.articlereply.reply.command.vo.RequestRegistReply;
+import org.thisdote.innerjoinus.articlereply.reply.command.vo.ResponseDeleteReply;
 import org.thisdote.innerjoinus.articlereply.reply.command.vo.ResponseRegistReply;
 import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
 
@@ -38,11 +40,11 @@ public class ReplyCommandController {
                 + ", swcamp.message: " + env.getProperty("swcamp.message");
     }
 
-    @GetMapping("/regist-reply")
+    @GetMapping("/regist_reply")
     public void registReply() {
     }
 
-    @PostMapping("/regist-reply")
+    @PostMapping("/regist_reply")
     public ResponseEntity<ResponseRegistReply> registReply(@RequestBody RequestRegistReply inputReply) {
 
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -63,5 +65,19 @@ public class ReplyCommandController {
         responseRegistReply.setReplyDeleteStatus(responseReplyDTO.getReplyDeleteStatus());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseRegistReply);
+    }
+
+    @GetMapping("/delete_reply")
+    public void deleteReply(){}
+
+    @PostMapping("/delete_reply")
+    public ResponseEntity<ResponseDeleteReply> deleteReply(@RequestBody RequestDeleteReply deleteReply) {
+
+        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        ReplyDTO replyDTO = modelMapper.map(deleteReply, ReplyDTO.class);
+        ResponseDeleteReply responseDeleteReply = new ResponseDeleteReply();
+
+        responseDeleteReply.setMessage(replyCommandService.deleteReply(replyDTO));
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseDeleteReply);
     }
 }

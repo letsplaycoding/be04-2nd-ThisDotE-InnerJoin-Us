@@ -14,3 +14,23 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: article-reply
+          uri: lb://INNERJOINUS-ARTICLEREPLY
+          predicates:
+            - Path=/article-reply/**
+          filters:
+            - RewritePath=/article-reply/(?<segment>.*), /$\{segment}
+
+        - id: studygroup-member
+          uri: lb://INNERJOINUS-STUDYGROUP-MEMBER
+          predicates:
+            - Path=/studygroup-member/**
+          filters:
+            - RewritePath=/studygroup-member/(?<segment>.*), /$\{segment}
+
+        - id: user
+          uri: lb://INNERJOINUS-USER
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<segment>.*), /$\{segment}
