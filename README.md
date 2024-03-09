@@ -2,8 +2,12 @@
    ✨ This.e 2조 ✨
 </h1>
 
+<h1 align="center">
+	👨‍💻InnerJoinUs👩‍💻
+</h1>
+
 <div align=center>
-<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5.png" width="1000" height="400"/>
+<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5.png"/>
 </div>
 
 <h2 align="center">👾 Members 👾</h2>
@@ -41,10 +45,10 @@ InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초
 스터디 컨텐츠를 참여하여 세계적으로 더욱 더 나은 개발환경을 구축할 수 있고 초보 개발자들이 InnerJoinUs 커뮤니티에서 성장해 나중엔 멘토가 되어 또 다른 초보 개발자들에게 영향을 끼칠 수 있다는 생각으로 개발자 커뮤니티를 구축했다.
 
 > 개발환경의 접근성에 대한 ChatGPT의 의견
-<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fc10ebc5-ed69-468e-91b2-f6eed0af7f15.png" width="800" height="200"/>
+<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fc10ebc5-ed69-468e-91b2-f6eed0af7f15.png" width="800" height="400"/>
 
 > OKKY 사이트 질문 게시글 수
-<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/885bde26-c7a1-4864-8a5a-e1425fa3be5f.png" width="800" height="200"/>
+<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/885bde26-c7a1-4864-8a5a-e1425fa3be5f.png" width="800" height="400"/>
 
 <br/>
 
@@ -76,13 +80,12 @@ InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초
 
 작업 수행공간: 서울 동작구 보라매로 87 SFC빌딩 3F 1강의실, 원격 소통(Discord), 사당역 14번 출구 앞 TOM N TOMS COFFEE
 
-프로젝트 구현 도구: MariaDB 10.3.38, Java 17.0.3
-
+프로젝트 구현 도구: <img src ="https://img.shields.io/badge/MariaDB-&logo=MariaDB"/><img src="https://img.shields.io/badge/10.3.38-515151?style=for-the-badge" width="50" height="20"/> <img src="https://img.shields.io/badge/Java-&logo=openjdk"><img src="https://img.shields.io/badge/17.0.3-515151?style=for-the-badge" width="40" height="20"/>
 <br/>
 
 ## 📍  일정관리 (WBS)
 
-[<img src="https://img.shields.io/badge/InnerJoinUsCommunityWBS-Link-181717?logo=GoogleSheets">](https://docs.google.com/spreadsheets/d/1L7I5WpZ2CWreK6KrXq0LpEJtEwTKPc2q/edit#gid=1057334268)
+[<img src="https://img.shields.io/badge/InnerJoinUsCommunityWBS-Link-181717?logo=GoogleSheets" width="300" height="30">](https://docs.google.com/spreadsheets/d/1L7I5WpZ2CWreK6KrXq0LpEJtEwTKPc2q/edit#gid=1057334268)
 
 <br/>
 
@@ -389,4 +392,4 @@ REFERENCES `user` ( `user_code` );
 
 - **이드보라** : 
 
-- **신동호** : 
+- **신동호** : 훗
