@@ -2,10 +2,11 @@
    ✨ This.e 2조 ✨
 </h1>
 
-![img_reference_09](https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5)
+<div align=center>
+<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5.png" width="1000" height="400"/>
+</div>
 
-
-<h2 align="center">Team Members</h2>
+<h2 align="center">👾 Members 👾</h2>
 
 <h3 align="center">
 	
@@ -27,35 +28,42 @@
 </h3>
 
 
-# 제안요청서
-
 # 1. 프로젝트 개요
 
 InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초보개발자들에게 도움이 되어주고 싶은 욕망을 가진 멘토들의 소통 공간이다. 개발에 대한 프로젝트와 다양한 스터디 콘텐츠를 참여하는데 그 목적이 있다. 커뮤니티의 추진 배경은 다음과 같다.
 
-## 1-1 필요성
+<br/>
+
+## 📍 필요성
 
 개발에 접근하려고 하는 사람들, 초보 개발자부터 현재 개발 업무환경에서 실무를 하고 있는 개발자까지 소통의 공간이 필요하다고 느꼈다. 개발 혹은 개발을 시작하기 위해 필요한 요소의 정보를 공유할 수 있으며 개발에 대한 QnA를 진행할 수 있다.
 하지만 그렇기엔 일반 커뮤니티와 다르지 않을 것이라 예상했기에 개발과 개발을 시작하기 위해 필요한 요소들을 같이 공부할 수 있는 스터디 컨텐츠를 구상했다. 커뮤니티 회원들은 서로 비대면으로 지식을 공유하고 같이 성장해나갈 수 있는
 스터디 컨텐츠를 참여하여 세계적으로 더욱 더 나은 개발환경을 구축할 수 있고 초보 개발자들이 InnerJoinUs 커뮤니티에서 성장해 나중엔 멘토가 되어 또 다른 초보 개발자들에게 영향을 끼칠 수 있다는 생각으로 개발자 커뮤니티를 구축했다.
 
-![GPTOpinion](https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fc10ebc5-ed69-468e-91b2-f6eed0af7f15)
-                                  *사진 1:개발환경의 접근성에 대한 ChatGPT의 의견*
+> 개발환경의 접근성에 대한 ChatGPT의 의견
+<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fc10ebc5-ed69-468e-91b2-f6eed0af7f15.png" width="800" height="200"/>
 
-![OKKYcommunity](https://github.com/ThisDotE/communityForDevelopers/assets/101622086/885bde26-c7a1-4864-8a5a-e1425fa3be5f)
-                                     *사진 2:OKKY 사이트 질문 게시글 수*
+> OKKY 사이트 질문 게시글 수
+<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/885bde26-c7a1-4864-8a5a-e1425fa3be5f.png" width="800" height="200"/>
+
+<br/>
+
+## 📍 제안요청서 (올릴 예정)
+
+<br/>
 
 # 2. 프로젝트 작업 범위
 
-InnerJoinUs 프로젝트의 예상 결과물은 다양한 측면에서 개발자 커뮤니티 데이터베이스의 구축하기 위해 활용되는 항목들이 있으며 아래와 같습니다.
-
+> InnerJoinUs 프로젝트의 예상 결과물은 다양한 측면에서 개발자 커뮤니티 데이터베이스의 구축하기 위해 활용되는 항목들이 있으며 아래와 같습니다.
 - 개발자 커뮤니티 데이터베이스: 커뮤니티와 개발자 관련 정보를 체계적으로 수집, 저장, 관리하는 데이터베이스의 구축 및 운영
 - 개체-관계 다이어그램(ERD) 및 테이블 정의: 커뮤니티 데이터베이스의 구조를 명확히 나타내는 ERD와 각 테이블에 대한 정의서
 - SQL 쿼리 및 검색 기능: 데이터베이스에서 커뮤니티 정보를 검색하고 분석하기 위한 기본 및 복잡한 SQL 쿼리 및 검색 기능
 - 프로젝트 문서 및 매뉴얼: 프로젝트 진행 과정, 진행 장소 및 프로젝트 구현 도구
 - 테스트 결과 보고서: SQL 쿼리 및 시스템 기능에 대한 테스트 결과를 기록한 테스트 결과 보고서
 
-## 2-1 추진 계획
+<br/>
+
+## 📍 추진 계획
 
 *테이블 1: 추진체계*
 
@@ -70,18 +78,26 @@ InnerJoinUs 프로젝트의 예상 결과물은 다양한 측면에서 개발자
 
 프로젝트 구현 도구: MariaDB 10.3.38, Java 17.0.3
 
-## 2-2  일정관리 (WBS)
+<br/>
+
+## 📍  일정관리 (WBS)
 
 [<img src="https://img.shields.io/badge/InnerJoinUsCommunityWBS-Link-181717?logo=GoogleSheets">](https://docs.google.com/spreadsheets/d/1L7I5WpZ2CWreK6KrXq0LpEJtEwTKPc2q/edit#gid=1057334268)
 
-## 2-3 Flow Chart (업무흐름도)
-![image](https://github.com/ThisDotE/InnerJoinUs/assets/149561287/f4c68f3b-76d2-472c-9ca7-c4f9ef066d6e)
+<br/>
+
+## 📍 Flow Chart (업무흐름도)
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/f4c68f3b-76d2-472c-9ca7-c4f9ef066d6e.png" width="1000" height="500"/>
+
+<br/>
 
 # 3. 요구사항
 
 요구사항 항목에서는 프로젝트 데이터베이스 구현에 필요한 기능적, 비기능적 요구사항 파악과 구현을 위한 구체적인 명세서 그리고 모델링과 모델 테스트 결과를 확인할 수 있습니다.
 
-## 3-1 작업 명세서
+<br/>
+
+## 📍 작업 명세서
 <details>
 <summary>요구사항 명세서</summary>
 <div markdown="1">
@@ -130,22 +146,22 @@ InnerJoinUs 프로젝트의 예상 결과물은 다양한 측면에서 개발자
 </div>
 </details>
     
-  
+<br/>
 
-## 3-2 개념 & 논리 모델링
+## 📍 개념 & 논리 모델링
 
+### 💡 개념 모델링
 ![img_conceptual_model](https://github.com/ThisDotE/communityForDevelopers/assets/101622086/6cd05cd9-79fa-4947-8d36-f983f16a18e8)
-개념 모델링
 
+### 💡 DA# 논리 모델
 ![img_logical_model](https://github.com/ThisDotE/communityForDevelopers/assets/101622086/4ac31300-0a0f-4fc6-b9b2-a8ecda64f6e8)
-DA# 논리 모델
 
-## 3-3 물리 모델링
+## 📍 물리 모델링
 
+### 💡 DA# 물리 모델
 ![img_physical_model](https://github.com/ThisDotE/communityForDevelopers/assets/101622086/b142424a-7a81-4e2c-8e12-6dd465a1e823)
-DA# 물리 모델
 
-## 3-4 DDL 구문 작성
+## 📍 DDL 구문 작성
 <details>
 <summary>DDL 구문</summary>
 <div markdown="1">
