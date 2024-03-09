@@ -48,5 +48,4 @@ public class UserEntity {
 
     @Column(name = "user_resign_status")
     private int userResignStatus;
-
 }

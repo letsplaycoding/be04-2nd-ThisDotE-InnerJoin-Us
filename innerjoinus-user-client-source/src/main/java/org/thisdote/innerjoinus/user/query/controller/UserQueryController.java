@@ -4,16 +4,16 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.thisdote.innerjoinus.user.dto.UserDTO;
 import org.thisdote.innerjoinus.user.query.service.UserQueryService;
+import org.thisdote.innerjoinus.user.vo.RequestUser;
 import org.thisdote.innerjoinus.user.vo.ResponseUser;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/")
@@ -50,5 +50,35 @@ public class UserQueryController {
         }
 
         return ResponseEntity.status(HttpStatus.OK).body(responseUser);
+    }
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<ResponseUser> getUserByUserId(@PathVariable("userId") String userId) {
+        UserDTO selectedUser = userQueryService.selectUserByUserId(userId);
+        ResponseUser responseUser = new ResponseUser();
+
+        if (selectedUser != null) {
+            responseUser = mapper.map(selectedUser, ResponseUser.class);
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body(responseUser);
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<Map<String, Object>> registUser(@RequestBody RequestUser user) {
+        System.out.println("user = " + user);
+        UserDTO requestSignUpUser = mapper.map(user, UserDTO.class);
+        UserDTO returnedUser = userQueryService.createUser(requestSignUpUser);
+        Map<String, Object> registrationResultResponse = new HashMap<>();
+
+        if (returnedUser == null) {
+            registrationResultResponse.put("message", "회원 등록 실패");
+        } else {
+            registrationResultResponse.put("resultCode", 200);
+            registrationResultResponse.put("message", "회원 등록 성공");
+            registrationResultResponse.put("result", mapper.map(returnedUser, ResponseUser.class));
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body(registrationResultResponse);
     }
 }
