@@ -15,15 +15,12 @@ import org.thisdote.innerjoinus.studygroup_member.dto.StudyGroupMemberDTO;
 @RequestMapping("/")
 public class StudyGroupMemberCommandController {
 
-    private Environment env;
-    private ModelMapper modelMapper;
-    private StudyGroupMemberCommandService studyGroupMemberCommandService;
+    private final ModelMapper modelMapper;
+    private final StudyGroupMemberCommandService studyGroupMemberCommandService;
 
     @Autowired
-    public StudyGroupMemberCommandController(Environment env,
-                                             ModelMapper modelMapper,
+    public StudyGroupMemberCommandController(ModelMapper modelMapper,
                                              StudyGroupMemberCommandService studyGroupMemberCommandService) {
-        this.env = env;
         this.modelMapper = modelMapper;
         this.studyGroupMemberCommandService = studyGroupMemberCommandService;
     }
@@ -36,7 +33,7 @@ public class StudyGroupMemberCommandController {
 //    }
 
     // 스터디원 추가하기 - regist(insert)
-    @PostMapping("/member/regist")
+    @PostMapping("/studygroup/member/regist")
     public ResponseEntity<ResponseRegistStudyGroupMember> registStudyGroupMember
                                                     (@RequestBody RequestRegistStudyGroupMember studyGroupMember) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -58,7 +55,7 @@ public class StudyGroupMemberCommandController {
     }
 
     // 스터디원 수정하기 - modify(update)
-    @PostMapping("/member/modify")
+    @PostMapping("/studygroup/member/modify")
     public ResponseEntity<ResponseModifyStudyGroupMember> modifyStudyGroupMember (@RequestBody RequestModifyStudyGroupMember
                                                                                         modifyStudyGroupMember) {
         StudyGroupMemberDTO studyGroupMemberDTO = modelMapper.map(modifyStudyGroupMember, StudyGroupMemberDTO.class);
@@ -74,10 +71,10 @@ public class StudyGroupMemberCommandController {
     }
 
     // 스터디원 삭제하기 - delete
-    @GetMapping("/member/delete")
+    @GetMapping("/studygroup/member/delete")
     public void deleteStudyGroupMember(){}
 
-    @PostMapping("/member/delete")
+    @PostMapping("/studygroup/member/delete")
     public ResponseEntity<ResponseDeleteStudyGroupMember> deleteStudyGroupMember (@RequestBody RequestDeleteStudyGroupMember
                                                                                               deleteStudyGroupMemberId) {
 //        StudyGroupMemberDTO studyGroupMemberDTO = modelMapper.map(deleteStudyGroupMemberId, StudyGroupMemberDTO.class);
@@ -88,5 +85,13 @@ public class StudyGroupMemberCommandController {
         responseDeleteStudyGroupMember.setMessage(message);
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseDeleteStudyGroupMember);
+    }
+
+    @GetMapping("/studygroupmember/user/{studyGroupMemberId}")
+    public ResponseEntity<ResponseStudyGroupMemberUser> selectStudyGroupMemberUser(@PathVariable("studyGroupMemberId") int studyGroupMemberId) {
+        StudyGroupMemberDTO studyGroupMemberDTO = studyGroupMemberCommandService.selectStudyGroupMemberUser(studyGroupMemberId);
+
+        ResponseStudyGroupMemberUser returnValue = modelMapper.map(studyGroupMemberDTO, ResponseStudyGroupMemberUser.class);
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 }
