@@ -9,4 +9,6 @@ public interface ReplyQueryService {
     public List<ReplyDTO> findAllReply();
 
     public List<ReplyDTO> selectReplyByUser(int userCode);
+
+    ReplyDTO selectReplyByReplyId(int replyId);
 }
