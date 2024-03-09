@@ -50,9 +50,9 @@ public class ReplyQueryController {
         return ResponseEntity.status(HttpStatus.OK).body(responseList);
     }
 
-    @GetMapping("/select/{replyId}")
-    public ResponseEntity<ResponseSelectReplyByReplyId> selectReplyByReplyId(@PathVariable("replyId") int replyId) {
-        ReplyDTO replyDTO = replyQueryService.selectReplyByReplyId(replyId);
+    @GetMapping("/select/with_user_info/{replyId}")
+    public ResponseEntity<ResponseSelectReplyByReplyId> selectReplyByReplyIdFeignUser(@PathVariable("replyId") int replyId) {
+        ReplyDTO replyDTO = replyQueryService.selectReplyByReplyIdFeignUser(replyId);
 
         ResponseSelectReplyByReplyId returnValue = mapper.map(replyDTO, ResponseSelectReplyByReplyId.class);
         return ResponseEntity.status(HttpStatus.OK).body(returnValue);

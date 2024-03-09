@@ -10,5 +10,5 @@ public interface ReplyQueryService {
 
     public List<ReplyDTO> selectReplyByUser(int userCode);
 
-    ReplyDTO selectReplyByReplyId(int replyId);
+    ReplyDTO selectReplyByReplyIdFeignUser(int replyId);
 }
