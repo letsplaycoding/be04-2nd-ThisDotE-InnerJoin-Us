@@ -1,24 +1,31 @@
-### 팀명: This.e 2조
+<h1 align="center">
+   ✨ This.e 2조 ✨
+</h1>
 
 ![img_reference_09](https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5)
 
-### 팀원
-- 팀원 : **이준형** 
+
+<h2 align="center">Team Members</h2>
+
+<h3 align="center">
+	
+🐙 **이준형** 
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/jhlee6515)
 
-- 팀원 : **소우주**
+🐳 **소우주**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/helloItsUniverse)
 
-- 팀원 : **신대영**
+🐡 **신대영**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/DYShin1)
 
-- 팀원 : **신동호**
+🦖 **신동호**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/letsplaycoding)
 
-- 팀원 : **이드보라**
+🐰 **이드보라**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/Bodrami)
 
----
+</h3>
+
 
 # 제안요청서
 
@@ -66,6 +73,9 @@ InnerJoinUs 프로젝트의 예상 결과물은 다양한 측면에서 개발자
 ## 2-2  일정관리 (WBS)
 
 [<img src="https://img.shields.io/badge/InnerJoinUsCommunityWBS-Link-181717?logo=GoogleSheets">](https://docs.google.com/spreadsheets/d/1L7I5WpZ2CWreK6KrXq0LpEJtEwTKPc2q/edit#gid=1057334268)
+
+## 2-3 Flow Chart (업무흐름도)
+![image](https://github.com/ThisDotE/InnerJoinUs/assets/149561287/f4c68f3b-76d2-472c-9ca7-c4f9ef066d6e)
 
 # 3. 요구사항
 
