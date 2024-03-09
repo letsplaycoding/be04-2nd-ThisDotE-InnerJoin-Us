@@ -64,11 +64,12 @@ public class CommandArticleServiceImpl implements CommandArticleService {
     }
 
     @Override
-    public ArticleDTO selectArticleUser(int userId) {
-        ArticleEntity article = commandArticleRepository.findById(userId).get();
+    public ArticleDTO selectArticleUser(int articleId) {
+        ArticleEntity article = commandArticleRepository.findById(articleId).get();
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         ArticleDTO articleDTO = mapper.map(article, ArticleDTO.class);
 
-        List<ResponseUser> userList = userClient.getAllUser(userId);
+        List<ResponseUser> userList = userClient.getAllUser(articleDTO.getUserCode());
         articleDTO.setUserList(userList);
         return articleDTO;
     }
