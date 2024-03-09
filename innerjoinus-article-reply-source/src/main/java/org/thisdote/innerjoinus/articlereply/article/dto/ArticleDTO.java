@@ -1,6 +1,7 @@
 package org.thisdote.innerjoinus.articlereply.article.dto;
 
 import lombok.Data;
+import org.thisdote.innerjoinus.articlereply.article.command.vo.ResponseUser;
 import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
 import java.util.Date;
 import java.util.List;
@@ -27,4 +28,5 @@ public class ArticleDTO {
     private int studygroupPendingMemberCount;
     private int articleDeleteStatus;
     private List<ReplyDTO> replyDTOList;
+    private List<ResponseUser> userList;
 }
