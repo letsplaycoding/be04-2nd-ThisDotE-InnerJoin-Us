@@ -8,4 +8,6 @@ public interface ReplyCommandService {
     ReplyDTO registReply(ReplyDTO replyDTO);
 
     String deleteReply(ReplyDTO replyDTO);
+
+    ReplyDTO modifyReply(ReplyDTO replyDTO);
 }
