@@ -25,5 +25,6 @@ public class ResponseArticleUser {
     private int studygroupCurrentMemberCount;
     private int studygroupPendingMemberCount;
     private int articleDeleteStatus;
-    private List<ResponseUser> userList;
+//    private List<ResponseUser> userList;
+    private ResponseUser userList;
 }

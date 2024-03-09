@@ -10,5 +10,6 @@ import java.util.List;
 @FeignClient(name = "INNERJOINUS-USER", url = "localhost:8000")
 public interface UserClient {
     @GetMapping("/user/users/{userCode}")
-    List<ResponseUser> getAllUser(@PathVariable("userCode") Integer userCode);
+//    List<ResponseUser> getAllUser(@PathVariable("userCode") Integer userCode);
+    ResponseUser getAllUser(@PathVariable("userCode") Integer userCode);
 }
