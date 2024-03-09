@@ -1,5 +1,6 @@
 package org.thisdote.innerjoinus.articlereply.article.command.controller;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -29,11 +30,10 @@ public class CommandArticleController {
     public ResponseEntity<ResponseRegistArticle> registArticle(@RequestBody RequestRegistArticle registArticle){
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         ArticleDTO articleDTO = modelMapper.map(registArticle, ArticleDTO.class);
-        commandArticleService.registArticle(articleDTO);
+        ArticleDTO article = commandArticleService.registArticle(articleDTO);
 
         ResponseRegistArticle responseRegistArticle = new ResponseRegistArticle();
-        responseRegistArticle.setMessage(articleDTO.getArticleTitle());
-        System.out.println("responseRegistArticle = " + responseRegistArticle);
+        responseRegistArticle.setMessage(article.toString());
         return  ResponseEntity.status(HttpStatus.CREATED).body(responseRegistArticle);
     }
 
@@ -55,10 +55,18 @@ public class CommandArticleController {
     @PostMapping("/modify_article")
     public ResponseEntity<ResponseModifyArticle> modifyArticle(@RequestBody RequestModifyArticle modifyArticle){
         ArticleDTO articleDTO = modelMapper.map(modifyArticle, ArticleDTO.class);
-        commandArticleService.modifyArticle(articleDTO);
+        ArticleDTO article = commandArticleService.modifyArticle(articleDTO);
 
         ResponseModifyArticle responseModifyArticle = new  ResponseModifyArticle();
-        responseModifyArticle.setMessage("수정 완료");
+        responseModifyArticle.setMessage(article.toString());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseModifyArticle);
+    }
+
+    @GetMapping("/article/user/{articleId}")
+    public ResponseEntity<ResponseArticleUser> selectArticleUser(@PathVariable("articleId") int articleId){
+        ArticleDTO articleDTO = commandArticleService.selectArticleUser(articleId);
+
+        ResponseArticleUser returnValue = modelMapper.map(articleDTO, ResponseArticleUser.class);
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 }

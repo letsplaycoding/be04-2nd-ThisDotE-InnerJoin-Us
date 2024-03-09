@@ -1,15 +1,16 @@
 package org.thisdote.innerjoinus.studygroup_member.command.vo;
 
+
 import lombok.*;
 
-import java.sql.Date;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-public class RequestStudyGroupMember {
+public class ResponseRegistStudyGroupMember {
 
     private int studyGroupId;
     private int studyGroupRole;

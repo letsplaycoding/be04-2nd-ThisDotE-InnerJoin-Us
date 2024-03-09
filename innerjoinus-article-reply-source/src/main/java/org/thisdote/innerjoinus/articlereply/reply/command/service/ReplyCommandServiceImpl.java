@@ -27,6 +27,8 @@ public class ReplyCommandServiceImpl implements ReplyCommandService{
     @Override
     public ReplyDTO registReply(ReplyDTO replyDTO) {
         Date createdDate = new Date();
+
+        // front 단에서 건들 수 없으나 내부적으로 수정되어야 하는 값들 수정
         replyDTO.setReplyReportStatus(0);
         replyDTO.setReplyCreatedDate(createdDate);
         replyDTO.setReplyLastUpdateDate(createdDate);
@@ -40,6 +42,32 @@ public class ReplyCommandServiceImpl implements ReplyCommandService{
         replyCommandRepository.save(replyCommandEntity);
         return replyDTO;
 
+    }
+
+    @Transactional
+    @Override
+    public ReplyDTO modifyReply(ReplyDTO inputModifyReplyDTO) {
+
+        try {
+            ReplyCommandEntity returnedReply = replyCommandRepository.findById(inputModifyReplyDTO.getReplyId()).get();
+            mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+            ReplyDTO modifyDTO = mapper.map(returnedReply, ReplyDTO.class);
+
+            // reply_last_update_date: front 단에서 건들 수 없으나 내부적으로 수정되어야 하는 값
+            Date updatedDate = new Date();
+            modifyDTO.setReplyLastUpdateDate(updatedDate);
+
+            // reply_content: front 단에서 받아와 수정해야 하는 값
+            modifyDTO.setReplyContent(inputModifyReplyDTO.getReplyContent());
+
+            // 수정된 DTO를 entity로 바꿔 DB에 save
+            replyCommandRepository.save(mapper.map(modifyDTO, ReplyCommandEntity.class));
+            return modifyDTO;
+
+        } catch (Exception e) {
+            // 존재하지 않는 reply_id 가 입력됐을때
+            return null;
+        }
     }
 
     @Transactional

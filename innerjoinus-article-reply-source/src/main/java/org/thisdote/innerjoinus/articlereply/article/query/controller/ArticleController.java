@@ -1,20 +1,22 @@
 package org.thisdote.innerjoinus.articlereply.article.query.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.thisdote.innerjoinus.articlereply.article.query.vo.ResponseArticleByUser;
+import org.thisdote.innerjoinus.articlereply.article.query.aggregate.SearchCriteriaEnum;
+import org.thisdote.innerjoinus.articlereply.article.query.vo.*;
 import org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO;
 import org.thisdote.innerjoinus.articlereply.article.query.service.ArticleService;
-import org.thisdote.innerjoinus.articlereply.article.query.vo.ResponseArticle;
-import org.thisdote.innerjoinus.articlereply.article.query.vo.ResponseQuestionArticle;
-import org.thisdote.innerjoinus.articlereply.article.query.vo.ResponseStudyArticleInfo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+@Slf4j
 @RestController
 @RequestMapping("/")
 public class ArticleController {
@@ -66,6 +68,27 @@ public class ArticleController {
         List<ArticleDTO> articleDTOList = articleService.selectStudyArticleInfo(article_id, study_cate);
         List<ResponseStudyArticleInfo> returnValue = articleAndReplyDTOToTesponseOrder(articleDTOList);
 
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
+    }
+
+    @PostMapping("/select/criteria")
+    public ResponseEntity<List<ResponseSelectEnum>> selectArticleByCriteria(@RequestBody RequestSelectEnum requestCriteria) {
+        Map<String, Object> criteria = new HashMap<>();
+        if(SearchCriteriaEnum.TITLE.toString().equals(requestCriteria.getCriteriaEnum())){
+            criteria.put("TITLE", requestCriteria.getSelect());
+        } else if (SearchCriteriaEnum.CATEGORY.toString().equals(requestCriteria.getCriteriaEnum())) {
+            criteria.put(requestCriteria.getCriteriaEnum(), requestCriteria.getSelect());
+        } else if (SearchCriteriaEnum.WRITER.toString().equals(requestCriteria.getCriteriaEnum())) {
+            criteria.put(requestCriteria.getCriteriaEnum(), requestCriteria.getSelect());
+        } else{
+            log.info("검색할 수 없습니다.");
+        }
+        List<ArticleDTO> articleDTOList = articleService.selectArticleByCriteria(criteria);
+        List<ResponseSelectEnum> returnValue = new ArrayList<>();
+
+        if(articleDTOList != null){
+            returnValue = articleDTOList.stream().map(ArticleDTO -> mapper.map(ArticleDTO, ResponseSelectEnum.class)).toList();
+        }
         return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 
@@ -121,4 +144,5 @@ public class ArticleController {
         }
         return responseArticles;
     }
+
 }

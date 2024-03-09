@@ -5,7 +5,9 @@ import org.thisdote.innerjoinus.articlereply.article.dto.ArticleDTO;
 public interface CommandArticleService {
     String deleteArticle(ArticleDTO articleDTO);
 
-    void modifyArticle(ArticleDTO modifyArticle);
+    ArticleDTO modifyArticle(ArticleDTO modifyArticle);
 
-    void registArticle(ArticleDTO articleDTO);
+    ArticleDTO registArticle(ArticleDTO articleDTO);
+
+    ArticleDTO selectArticleUser(int articleId);
 }
