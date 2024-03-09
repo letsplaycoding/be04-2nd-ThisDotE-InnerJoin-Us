@@ -36,7 +36,7 @@ public class StudyGroupMemberCommandController {
 //    }
 
     // 스터디원 추가하기 - regist(insert)
-    @PostMapping("/member/regist")
+    @PostMapping("/studygroup/member/regist")
     public ResponseEntity<ResponseRegistStudyGroupMember> registStudyGroupMember
                                                     (@RequestBody RequestRegistStudyGroupMember studyGroupMember) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -58,7 +58,7 @@ public class StudyGroupMemberCommandController {
     }
 
     // 스터디원 수정하기 - modify(update)
-    @PostMapping("/member/modify")
+    @PostMapping("/studygroup/member/modify")
     public ResponseEntity<ResponseModifyStudyGroupMember> modifyStudyGroupMember (@RequestBody RequestModifyStudyGroupMember
                                                                                         modifyStudyGroupMember) {
         StudyGroupMemberDTO studyGroupMemberDTO = modelMapper.map(modifyStudyGroupMember, StudyGroupMemberDTO.class);
@@ -74,10 +74,10 @@ public class StudyGroupMemberCommandController {
     }
 
     // 스터디원 삭제하기 - delete
-    @GetMapping("/member/delete")
+    @GetMapping("/studygroup/member/delete")
     public void deleteStudyGroupMember(){}
 
-    @PostMapping("/member/delete")
+    @PostMapping("/studygroup/member/delete")
     public ResponseEntity<ResponseDeleteStudyGroupMember> deleteStudyGroupMember (@RequestBody RequestDeleteStudyGroupMember
                                                                                               deleteStudyGroupMemberId) {
 //        StudyGroupMemberDTO studyGroupMemberDTO = modelMapper.map(deleteStudyGroupMemberId, StudyGroupMemberDTO.class);
