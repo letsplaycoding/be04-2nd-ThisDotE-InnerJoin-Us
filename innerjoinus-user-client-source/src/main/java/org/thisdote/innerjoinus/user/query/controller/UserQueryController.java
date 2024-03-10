@@ -1,6 +1,7 @@
 package org.thisdote.innerjoinus.user.query.controller;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.thisdote.innerjoinus.user.dto.UserDTO;
 import org.thisdote.innerjoinus.user.query.service.UserQueryService;
 import org.thisdote.innerjoinus.user.vo.RequestUser;
 import org.thisdote.innerjoinus.user.vo.ResponseUser;
+import org.thisdote.innerjoinus.user.vo.ResponseUserFeignArticlesAndReplies;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,6 +52,15 @@ public class UserQueryController {
         }
 
         return ResponseEntity.status(HttpStatus.OK).body(responseUser);
+    }
+
+    @GetMapping("/code/with_articles_and_replies/{userCode}")
+    public ResponseEntity<ResponseUserFeignArticlesAndReplies> getUserByUserCodeFeignArticlesAndReplies(@PathVariable("userCode") Integer userCode) {
+        UserDTO userDTO = userQueryService.getUserByUserCodeFeignArticlesAndReplies(userCode);
+
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        ResponseUserFeignArticlesAndReplies returnValue = mapper.map(userDTO, ResponseUserFeignArticlesAndReplies.class);
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 
     @GetMapping("/id/{userId}")
