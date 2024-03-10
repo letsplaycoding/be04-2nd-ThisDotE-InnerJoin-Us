@@ -1,9 +1,12 @@
 <h1 align="center">
-   ✨ This.e 2조 ✨
+   This.e 2조
 </h1>
 
 <h2 align="center">
-	👨‍💻InnerJoinUs👩‍💻
+	👨‍💻  ProjectName 'InnerJoinUs'  👩‍💻 
+
+ [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FThisDotE%2FInnerJoinUs.git&count_bg=%232884FF&title_bg=%23FFA900&icon=googleclassroom.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 </h2>
 
 <div align=center>
