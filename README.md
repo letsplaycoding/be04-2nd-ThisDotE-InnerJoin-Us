@@ -101,6 +101,18 @@ InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초
 
 <br/>
 
+## 📍 DDD
+<ERD CLOUD 모델링>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/101622086/830b828c-a787-4b88-aa90-5054da003b28"/>
+<br/>
+
+<MIRO 모델링>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/101622086/37a7b2a7-cb55-4197-8eaa-ac183789a7a2"/>
+
+MIRO 링크 : [<img src="https://img.shields.io/badge/Miro-Link-181717?logo=Miro">](https://miro.com/app/board/uXjVNwsdb7w=/)
+
+
+
 # 3. 요구사항
 
 요구사항 항목에서는 프로젝트 데이터베이스 구현에 필요한 기능적, 비기능적 요구사항 파악과 구현을 위한 구체적인 명세서 그리고 모델링과 모델 테스트 결과를 확인할 수 있습니다.
