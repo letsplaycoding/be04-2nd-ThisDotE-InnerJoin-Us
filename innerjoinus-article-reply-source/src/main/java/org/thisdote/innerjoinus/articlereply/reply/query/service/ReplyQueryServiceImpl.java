@@ -49,4 +49,11 @@ public class ReplyQueryServiceImpl implements ReplyQueryService{
 
         return replyDTO;
     }
+
+    @Override
+    public ReplyDTO selectReplyByReplyId(int replyId) {
+        ReplyQueryEntity replyQueryEntity = replyQueryRepository.findById(replyId).get();
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        return mapper.map(replyQueryEntity, ReplyDTO.class);
+    }
 }

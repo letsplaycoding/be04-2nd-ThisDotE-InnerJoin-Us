@@ -12,6 +12,7 @@ import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
 import org.thisdote.innerjoinus.articlereply.reply.query.service.ReplyQueryService;
 import org.thisdote.innerjoinus.articlereply.reply.query.vo.ResponseSelectAllReply;
 import org.thisdote.innerjoinus.articlereply.reply.query.vo.ResponseSelectReplyByReplyId;
+import org.thisdote.innerjoinus.articlereply.reply.query.vo.ResponseSelectReplyByReplyIdFeignUser;
 import org.thisdote.innerjoinus.articlereply.reply.query.vo.ResponseSelectReplyByUser;
 
 import java.util.ArrayList;
@@ -51,8 +52,16 @@ public class ReplyQueryController {
     }
 
     @GetMapping("/select/with_user_info/{replyId}")
-    public ResponseEntity<ResponseSelectReplyByReplyId> selectReplyByReplyIdFeignUser(@PathVariable("replyId") int replyId) {
+    public ResponseEntity<ResponseSelectReplyByReplyIdFeignUser> selectReplyByReplyIdFeignUser(@PathVariable("replyId") int replyId) {
         ReplyDTO replyDTO = replyQueryService.selectReplyByReplyIdFeignUser(replyId);
+
+        ResponseSelectReplyByReplyIdFeignUser returnValue = mapper.map(replyDTO, ResponseSelectReplyByReplyIdFeignUser.class);
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
+    }
+
+    @GetMapping("/select/{replyId}")
+    public ResponseEntity<ResponseSelectReplyByReplyId> selectReplyByReplyId(@PathVariable("replyId") int replyId) {
+        ReplyDTO replyDTO = replyQueryService.selectReplyByReplyId(replyId);
 
         ResponseSelectReplyByReplyId returnValue = mapper.map(replyDTO, ResponseSelectReplyByReplyId.class);
         return ResponseEntity.status(HttpStatus.OK).body(returnValue);
