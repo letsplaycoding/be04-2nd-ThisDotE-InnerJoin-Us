@@ -398,6 +398,7 @@ REFERENCES `user` ( `user_code` );
 <br/>
 
 # 5. 단위 테스트 결과 보고서
+![KakaoTalk_20240310_202121776](https://github.com/ThisDotE/InnerJoinUs/assets/101622086/6001a746-4e01-480b-a68c-de467054ae6e)
 
 <br/>
 
