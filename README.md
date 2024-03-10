@@ -398,6 +398,27 @@ REFERENCES `user` ( `user_code` );
 
 <br/>
 
+# 6. REST API 문서
+<details>
+<summary>회원 관련 API</summary>
+<div>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/45275759/1a2759a9-893c-451a-a93d-dffe621a51a6" />
+</div>
+</details>
+<details>
+<summary>게시글/댓글 관련 API</summary>
+<div>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/45275759/93e094f7-6a09-42e5-ae37-da45cc436239" />
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/45275759/33fd5258-198c-411d-b14d-19370051546f" />
+</div>
+</details>
+<details>
+<summary>스터디그룹 관련 API</summary>
+<div>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/45275759/b07fa694-49d8-448d-ace4-3625e0fab674" />
+</div>
+</details>
+
 # 6. 프로젝트 회고
 
 - **이준형** : 
