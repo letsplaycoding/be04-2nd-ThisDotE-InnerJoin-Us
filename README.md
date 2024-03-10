@@ -20,19 +20,19 @@
 
 <h3 align="center">
 	
-🐙 **이준형** 
+🤡 **이준형** 
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/jhlee6515)
 
 🐳 **소우주**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/helloItsUniverse)
 
-🐡 **신대영**
+🦧 **신대영**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/DYShin1)
 
-🦖 **신동호**
+🦈 **신동호**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/letsplaycoding)
 
-🐰 **이드보라**
+🐣 **이드보라**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/Bodrami)
 
 </h3>
@@ -401,7 +401,17 @@ REFERENCES `user` ( `user_code` );
 
 <br/>
 
-# 6. 프로젝트 회고
+# 6. Rest API 설계문서 산출물
+<details>
+<summary>Rest API 설계문서</summary>
+<div markdown="1">
+
+
+ 
+</details>
+</div>
+
+# 7. 프로젝트 회고
 
 - **이준형** : 
 
