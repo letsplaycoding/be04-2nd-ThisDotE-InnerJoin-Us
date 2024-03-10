@@ -1,9 +1,12 @@
 <h1 align="center">
-   This.e 2조
+  ✨ This.e 2조 ✨
 </h1>
 
 <h2 align="center">
-	👨‍💻  ProjectName 'InnerJoinUs'  👩‍💻 
+	
+<div align=center>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/3bdd0c01-14e3-40e2-aa4a-870df774856c">
+</div>
 
  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FThisDotE%2FInnerJoinUs.git&count_bg=%232884FF&title_bg=%23FFA900&icon=googleclassroom.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
@@ -162,6 +165,8 @@ InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초
 
 ### 💡 DA# 논리 모델
 ![img_logical_model](https://github.com/ThisDotE/communityForDevelopers/assets/101622086/4ac31300-0a0f-4fc6-b9b2-a8ecda64f6e8)
+
+<br/>
 
 ## 📍 물리 모델링
 
@@ -382,11 +387,21 @@ REFERENCES `user` ( `user_code` );
 </div>
 </details>
 
-## 4-테스트
+<br/>
 
+# 4. 프로젝트 아키텍처
 
+<div align=center>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/243efa0f-f023-4001-aa89-d697ad856374.png" width="800" height="500"/></h2>
+</div>
 
-# 5. 프로젝트 회고
+<br/>
+
+# 5. 단위 테스트 결과 보고서
+
+<br/>
+
+# 6. 프로젝트 회고
 
 - **이준형** : 
 
