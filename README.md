@@ -1,4 +1,4 @@
-1ㅂ<h1 align="center">
+<h1 align="center">
   ✨ This.e 2조 ✨
 </h1>
 
