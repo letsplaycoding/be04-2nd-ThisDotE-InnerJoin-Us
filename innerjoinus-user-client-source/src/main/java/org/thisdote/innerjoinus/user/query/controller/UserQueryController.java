@@ -40,7 +40,7 @@ public class UserQueryController {
         return ResponseEntity.status(HttpStatus.OK).body(responseUserList);
     }
 
-    @GetMapping("/{userCode}")
+    @GetMapping("/code/{userCode}")
     public ResponseEntity<ResponseUser> getUserByUserCode(@PathVariable("userCode") Integer userCode) {
         UserDTO selectedUser = userQueryService.selectUserByUserCode(userCode);
         ResponseUser responseUser = new ResponseUser();
@@ -52,7 +52,7 @@ public class UserQueryController {
         return ResponseEntity.status(HttpStatus.OK).body(responseUser);
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/id/{userId}")
     public ResponseEntity<ResponseUser> getUserByUserId(@PathVariable("userId") String userId) {
         UserDTO selectedUser = userQueryService.selectUserByUserId(userId);
         ResponseUser responseUser = new ResponseUser();
