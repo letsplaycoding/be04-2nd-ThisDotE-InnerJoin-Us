@@ -2,9 +2,9 @@
    ✨ This.e 2조 ✨
 </h1>
 
-<h1 align="center">
+<h2 align="center">
 	👨‍💻InnerJoinUs👩‍💻
-</h1>
+</h2>
 
 <div align=center>
 <img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5.png"/>
@@ -81,6 +81,7 @@ InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초
 작업 수행공간: 서울 동작구 보라매로 87 SFC빌딩 3F 1강의실, 원격 소통(Discord), 사당역 14번 출구 앞 TOM N TOMS COFFEE
 
 프로젝트 구현 도구: <img src ="https://img.shields.io/badge/MariaDB-&logo=MariaDB"/><img src="https://img.shields.io/badge/10.3.38-515151?style=for-the-badge" width="50" height="20"/> <img src="https://img.shields.io/badge/Java-&logo=openjdk"><img src="https://img.shields.io/badge/17.0.3-515151?style=for-the-badge" width="40" height="20"/>
+
 <br/>
 
 ## 📍  일정관리 (WBS)
