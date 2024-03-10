@@ -12,6 +12,7 @@ import org.thisdote.innerjoinus.articlereply.reply.dto.ReplyDTO;
 import org.thisdote.innerjoinus.articlereply.reply.query.service.ReplyQueryService;
 import org.thisdote.innerjoinus.articlereply.reply.query.vo.ResponseSelectAllReply;
 import org.thisdote.innerjoinus.articlereply.reply.query.vo.ResponseSelectReplyByReplyId;
+import org.thisdote.innerjoinus.articlereply.reply.query.vo.ResponseSelectReplyByReplyIdFeignUser;
 import org.thisdote.innerjoinus.articlereply.reply.query.vo.ResponseSelectReplyByUser;
 
 import java.util.ArrayList;
@@ -48,6 +49,14 @@ public class ReplyQueryController {
         }
 
         return ResponseEntity.status(HttpStatus.OK).body(responseList);
+    }
+
+    @GetMapping("/select/with_user_info/{replyId}")
+    public ResponseEntity<ResponseSelectReplyByReplyIdFeignUser> selectReplyByReplyIdFeignUser(@PathVariable("replyId") int replyId) {
+        ReplyDTO replyDTO = replyQueryService.selectReplyByReplyIdFeignUser(replyId);
+
+        ResponseSelectReplyByReplyIdFeignUser returnValue = mapper.map(replyDTO, ResponseSelectReplyByReplyIdFeignUser.class);
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 
     @GetMapping("/select/{replyId}")
