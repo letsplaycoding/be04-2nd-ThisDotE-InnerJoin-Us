@@ -1,4 +1,4 @@
-package org.thisdote.innerjoinus.user;
+package org.thisdote.innerjoinus.articlereply;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
@@ -11,10 +11,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-public class InnerjoinusUserClientSourceApplication {
-
+public class InnerjoinusArticleReplySourceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(InnerjoinusUserClientSourceApplication.class, args);
+        SpringApplication.run(InnerjoinusArticleReplySourceApplication.class, args);
     }
 
     @Bean
@@ -26,5 +25,4 @@ public class InnerjoinusUserClientSourceApplication {
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 }

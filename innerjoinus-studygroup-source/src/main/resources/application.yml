@@ -1,0 +1,28 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: innerjoinus-studygroup-member
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/communityfordeveloper
+    username: swcamp
+    password: swcamp
+
+  jpa:
+    show-sql: true
+    database: mysql
+    properties:
+      hibernate:
+        '[format_sql]': true
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
