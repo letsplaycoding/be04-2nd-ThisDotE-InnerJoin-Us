@@ -39,7 +39,7 @@ public class ReplyQueryServiceImpl implements ReplyQueryService{
     }
 
     @Override
-    public ReplyDTO selectReplyByReplyId(int replyId) {
+    public ReplyDTO selectReplyByReplyIdFeignUser(int replyId) {
         ReplyQueryEntity replyQueryEntity = replyQueryRepository.findById(replyId).get();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         ReplyDTO replyDTO = mapper.map(replyQueryEntity, ReplyDTO.class);
@@ -48,5 +48,12 @@ public class ReplyQueryServiceImpl implements ReplyQueryService{
         replyDTO.setResponseUser(responseUser);
 
         return replyDTO;
+    }
+
+    @Override
+    public ReplyDTO selectReplyByReplyId(int replyId) {
+        ReplyQueryEntity replyQueryEntity = replyQueryRepository.findById(replyId).get();
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        return mapper.map(replyQueryEntity, ReplyDTO.class);
     }
 }

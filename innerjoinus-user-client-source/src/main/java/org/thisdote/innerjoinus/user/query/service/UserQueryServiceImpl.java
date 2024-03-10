@@ -8,10 +8,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.thisdote.innerjoinus.user.client.ArticleReplyServiceClient;
 import org.thisdote.innerjoinus.user.command.entity.UserEntity;
 import org.thisdote.innerjoinus.user.command.repository.UserRepository;
 import org.thisdote.innerjoinus.user.dto.UserDTO;
+import org.thisdote.innerjoinus.user.query.aggregate.UserQueryEntity;
 import org.thisdote.innerjoinus.user.query.repository.UserMapper;
+import org.thisdote.innerjoinus.user.query.repository.UserQueryRepository;
+import org.thisdote.innerjoinus.user.vo.ResponseArticle;
+import org.thisdote.innerjoinus.user.vo.ResponseReply;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,17 +28,23 @@ public class UserQueryServiceImpl implements UserQueryService {
     private final ModelMapper modelMapper;
     UserRepository userRepository;
     BCryptPasswordEncoder passwordEncoder;
+    UserQueryRepository userQueryRepository;
+    ArticleReplyServiceClient articleReplyServiceClient;
 
     @Autowired
     public UserQueryServiceImpl(
             UserMapper userMapper,
             ModelMapper modelMapper,
             UserRepository userRepository,
-            BCryptPasswordEncoder passwordEncoder) {
+            BCryptPasswordEncoder passwordEncoder,
+            UserQueryRepository userQueryRepository,
+            ArticleReplyServiceClient articleReplyServiceClient) {
         this.userMapper = userMapper;
         this.modelMapper = modelMapper;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.userQueryRepository = userQueryRepository;
+        this.articleReplyServiceClient = articleReplyServiceClient;
     }
 
     @Override
@@ -77,6 +88,20 @@ public class UserQueryServiceImpl implements UserQueryService {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
         UserDTO userDTO = modelMapper.map(userEntity, UserDTO.class);
+
+        return userDTO;
+    }
+
+    @Override
+    public UserDTO getUserByUserCodeFeignArticlesAndReplies(Integer userCode) {
+        UserQueryEntity userQueryEntity = userQueryRepository.findById(userCode).get();
+        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        UserDTO userDTO = modelMapper.map(userQueryEntity, UserDTO.class);
+
+        List<ResponseArticle> responseArticleList = articleReplyServiceClient.getAllArticle(userCode);
+        userDTO.setArticleList(responseArticleList);
+        List<ResponseReply> responseReplyList = articleReplyServiceClient.getAllReply(userCode);
+        userDTO.setReplyList(responseReplyList);
 
         return userDTO;
     }

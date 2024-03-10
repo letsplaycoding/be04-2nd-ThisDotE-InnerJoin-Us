@@ -16,4 +16,6 @@ public interface UserQueryService extends UserDetailsService {
     UserDTO selectUserByUserId(String userId);
 
     UserDTO getUserDetailsByEmail(String email);
+
+    UserDTO getUserByUserCodeFeignArticlesAndReplies(Integer userCode);
 }

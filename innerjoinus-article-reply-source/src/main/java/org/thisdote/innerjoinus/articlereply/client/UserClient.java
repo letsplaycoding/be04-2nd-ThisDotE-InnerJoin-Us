@@ -9,7 +9,7 @@ import java.util.List;
 
 @FeignClient(name = "INNERJOINUS-USER", url = "localhost:8000")
 public interface UserClient {
-    @GetMapping("/user/users/{userCode}")
+    @GetMapping("/user/code/{userCode}")
 //    List<ResponseUser> getAllUser(@PathVariable("userCode") Integer userCode);
     ResponseUser getAllUser(@PathVariable("userCode") Integer userCode);
 }

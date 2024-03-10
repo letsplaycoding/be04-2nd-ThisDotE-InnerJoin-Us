@@ -1,12 +1,11 @@
-package org.thisdote.innerjoinus.articlereply.reply.query.vo;
+package org.thisdote.innerjoinus.user.vo;
 
 import lombok.Data;
-import org.thisdote.innerjoinus.articlereply.article.command.vo.ResponseUser;
 
 import java.util.Date;
 
 @Data
-public class ResponseSelectReplyByReplyId {
+public class ResponseReply {
     private int replyId;                // pk..
     private int replyReportStatus;
     private String replyContent;
