@@ -1,4 +1,4 @@
-<h1 align="center">
+1ㅂ<h1 align="center">
   ✨ This.e 2조 ✨
 </h1>
 
@@ -20,19 +20,19 @@
 
 <h3 align="center">
 	
-🐙 **이준형** 
+🤡 **이준형** 
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/jhlee6515)
 
 🐳 **소우주**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/helloItsUniverse)
 
-🐡 **신대영**
+🦧 **신대영**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/DYShin1)
 
-🦖 **신동호**
+🦈 **신동호**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/letsplaycoding)
 
-🐰 **이드보라**
+🐣 **이드보라**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/Bodrami)
 
 </h3>
