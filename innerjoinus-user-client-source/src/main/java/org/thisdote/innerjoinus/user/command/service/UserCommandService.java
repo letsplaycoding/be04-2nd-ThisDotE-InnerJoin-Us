@@ -6,4 +6,6 @@ public interface UserCommandService {
     UserDTO registUser(UserDTO newUser);
     void modifyUser(UserDTO modifyUser);
     void deleteUser(int userCode);
+
+    UserDTO selectUserReply(int userCode);
 }

@@ -10,6 +10,7 @@ import org.thisdote.innerjoinus.user.dto.UserDTO;
 import org.thisdote.innerjoinus.user.query.service.UserQueryService;
 import org.thisdote.innerjoinus.user.vo.RequestUser;
 import org.thisdote.innerjoinus.user.vo.ResponseUser;
+import org.thisdote.innerjoinus.user.vo.ResponseUserReply;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -71,5 +72,13 @@ public class UserCommandController {
         responseMap.put("message", "회원 탈퇴 성공");
 
         return ResponseEntity.status(HttpStatus.OK).body(responseMap);
+    }
+
+    @GetMapping("user/reply/{userCode}")
+    public ResponseEntity<ResponseUserReply> selectUserReply(@PathVariable("userCode") int userCode) {
+        UserDTO userDTO = userCommandService.selectUserReply(userCode);
+
+        ResponseUserReply returnValue = mapper.map(userDTO, ResponseUserReply.class);
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 }

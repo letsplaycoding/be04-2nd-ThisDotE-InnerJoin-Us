@@ -1,6 +1,7 @@
 package org.thisdote.innerjoinus.user.dto;
 
 import lombok.Data;
+import org.thisdote.innerjoinus.user.vo.ResponseReply;
 
 import java.util.Date;
 
@@ -18,4 +19,6 @@ public class UserDTO {
     private int userGrade;
     private int userResignStatus;       // 0 - 회원, 1 - 탈퇴 회원
     private StudyGroupMemberDTO studyGroupMemberDTO;
+    private int replyId;
+    private ResponseReply replyList;
 }

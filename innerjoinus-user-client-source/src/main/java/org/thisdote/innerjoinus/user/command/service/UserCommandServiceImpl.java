@@ -1,12 +1,15 @@
 package org.thisdote.innerjoinus.user.command.service;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.thisdote.innerjoinus.user.client.ReplyClient;
 import org.thisdote.innerjoinus.user.command.entity.UserEntity;
 import org.thisdote.innerjoinus.user.command.repository.UserRepository;
 import org.thisdote.innerjoinus.user.dto.UserDTO;
+import org.thisdote.innerjoinus.user.vo.ResponseReply;
 
 import java.util.Date;
 
@@ -15,11 +18,13 @@ public class UserCommandServiceImpl implements UserCommandService {
 
     private final ModelMapper mapper;
     private final UserRepository userRepository;
+    private final ReplyClient replyClient;
 
     @Autowired
-    public UserCommandServiceImpl(ModelMapper modelMapper, UserRepository userRepository) {
+    public UserCommandServiceImpl(ModelMapper modelMapper, UserRepository userRepository, ReplyClient replyClient) {
         this.mapper = modelMapper;
         this.userRepository = userRepository;
+        this.replyClient = replyClient;
     }
 
     @Transactional
@@ -54,5 +59,16 @@ public class UserCommandServiceImpl implements UserCommandService {
         UserEntity foundUser = userRepository.findById(userCode).orElseThrow(IllegalArgumentException::new);
 
         foundUser.setUserResignStatus(1);
+    }
+
+    @Override
+    public UserDTO selectUserReply(int userCode) {
+        UserEntity user = userRepository.findById(userCode).get();
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        UserDTO userDTO = mapper.map(user,UserDTO.class);
+
+        ResponseReply replyList = replyClient.getAllReply(userDTO.getReplyId());
+        userDTO.setReplyList(replyList);
+        return userDTO;
     }
 }
