@@ -37,6 +37,14 @@
 
 </h3>
 
+<br/>
+
+----
+
+<h2 align="center">DO YOU INNER JOIN US? 👀</h2>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/c7b54db8-2500-4457-bff5-b479a5103ce3.png"/>
+
+<br/>
 
 # 1. 프로젝트 개요
 
