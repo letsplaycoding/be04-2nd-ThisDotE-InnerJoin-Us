@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.thisdote.innerjoinus.user.query.repository.UserMapper">
+
+    <resultMap id="userResultMap" type="org.thisdote.innerjoinus.user.dto.UserDTO">
+        <id property="userCode" column="USER_CODE"/>
+        <result property="userId" column="USER_ID"/>
+        <result property="userPassword" column="USER_PASSWORD"/>
+        <result property="userBirthday" column="USER_BIRTHDAY"/>
+        <result property="userPhone" column="USER_PHONE"/>
+        <result property="userEmail" column="USER_EMAIL"/>
+        <result property="userStudyGroupStatus" column="USER_STUDYGROUP_STATUS"/>
+        <result property="userRegistDate" column="USER_REGIST_DATE"/>
+        <result property="userInfoUpdateDate" column="USER_INFO_UPDATE_DATE"/>
+        <result property="userGrade" column="USER_GRADE"/>
+        <result property="userResignStatus" column="USER_RESIGN_STATUS"/>
+    </resultMap>
+
+    <resultMap id="studyGroupMemberResultMap" type="org.thisdote.innerjoinus.user.dto.UserDTO" extends="userResultMap">
+        <association property="studyGroupMemberDTO" javaType="org.thisdote.innerjoinus.user.dto.StudyGroupMemberDTO">
+            <result property="studyGroupId" column="STUDYGROUP_ID"/>
+            <result property="studyGroupRole" column="STUDYGROUP_ROLE"/>
+            <result property="studyGroupRegistDate" column="STUDYGROUP_REGIST_DATE"/>
+            <result property="userCode" column="USER_CODE"/>
+        </association>
+    </resultMap>
+
+    <select id="selectAllUser" resultMap="userResultMap">
+        SELECT
+               A.USER_CODE
+             , A.USER_ID
+             , A.USER_PASSWORD
+             , A.USER_BIRTHDAY
+             , A.USER_PHONE
+             , A.USER_EMAIL
+             , A.USER_STUDYGROUP_STATUS
+             , A.USER_REGIST_DATE
+             , A.USER_INFO_UPDATE_DATE
+             , A.USER_GRADE
+             , A.USER_RESIGN_STATUS
+          FROM USER A
+         WHERE USER_RESIGN_STATUS = 0
+    </select>
+
+    <select id="selectUsersByResignStatus" resultMap="userResultMap" parameterType="_int">
+        SELECT
+               A.USER_CODE
+             , A.USER_ID
+             , A.USER_PASSWORD
+             , A.USER_BIRTHDAY
+             , A.USER_PHONE
+             , A.USER_EMAIL
+             , A.USER_STUDYGROUP_STATUS
+             , A.USER_REGIST_DATE
+             , A.USER_INFO_UPDATE_DATE
+             , A.USER_GRADE
+             , A.USER_RESIGN_STATUS
+          FROM USER A
+         WHERE USER_RESIGN_STATUS = #{resignStatus}
+    </select>
+
+    <select id="selectUserByUserId" resultMap="userResultMap" parameterType="string">
+        SELECT
+               A.USER_CODE
+             , A.USER_ID
+             , A.USER_PASSWORD
+             , A.USER_BIRTHDAY
+             , A.USER_PHONE
+             , A.USER_EMAIL
+             , A.USER_STUDYGROUP_STATUS
+             , A.USER_REGIST_DATE
+             , A.USER_INFO_UPDATE_DATE
+             , A.USER_GRADE
+             , A.USER_RESIGN_STATUS
+          FROM USER A
+         WHERE USER_ID = #{userId};
+    </select>
+
+    <select id="selectUserByUserCode" resultMap="userResultMap" parameterType="_int">
+        SELECT
+               A.USER_CODE
+             , A.USER_ID
+             , A.USER_PASSWORD
+             , A.USER_BIRTHDAY
+             , A.USER_PHONE
+             , A.USER_EMAIL
+             , A.USER_STUDYGROUP_STATUS
+             , A.USER_REGIST_DATE
+             , A.USER_INFO_UPDATE_DATE
+             , A.USER_GRADE
+             , A.USER_RESIGN_STATUS
+          FROM USER A
+         WHERE USER_CODE = #{userCode};
+    </select>
+
+</mapper>

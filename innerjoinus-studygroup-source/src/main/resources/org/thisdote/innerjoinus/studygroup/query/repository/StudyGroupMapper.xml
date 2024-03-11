@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.thisdote.innerjoinus.studygroup.query.repository.StudyGroupMapper">
+
+    <resultMap id="studyGroupResultMap" type="org.thisdote.innerjoinus.studygroup.dto.StudyGroupDTO">
+        <id property="studyGroupId" column="studygroup_id"/>
+        <result property="studyGroupType" column="studygroup_type"/>
+        <result property="studyGroupCreatedDate" column="studygroup_create_date"/>
+        <result property="studyGroupMemberCount" column="studygroup_member_count"/>
+        <result property="studyGroupActivationStatus" column="studygroup_activation_status"/>
+        <result property="studyGroupStudyTime" column="studygroup_study_time"/>
+        <result property="studyGroupContent" column="studygroup_content"/>
+        <result property="studyGroupDeleteStatus" column="studygroup_delete_status"/>
+    </resultMap>
+    
+    <select id="selectAllStudyGroup" resultMap="studyGroupResultMap">
+        SELECT
+               A.STUDYGROUP_ID
+             , A.STUDYGROUP_TYPE
+             , A.STUDYGROUP_CREATE_DATE
+             , A.STUDYGROUP_MEMBER_COUNT
+             , A.STUDYGROUP_ACTIVATION_STATUS
+             , A.STUDYGROUP_STUDY_TIME
+             , A.STUDYGROUP_CONTENT
+             , A.STUDYGROUP_DELETE_STATUS
+          FROM STUDYGROUP A;
+    </select>
+
+    <select id="selectAllEnglishStudyGroup" resultMap="studyGroupResultMap">
+        SELECT
+               A.STUDYGROUP_ID
+             , A.STUDYGROUP_TYPE
+             , A.STUDYGROUP_CREATE_DATE
+             , A.STUDYGROUP_MEMBER_COUNT
+             , A.STUDYGROUP_ACTIVATION_STATUS
+             , A.STUDYGROUP_STUDY_TIME
+             , A.STUDYGROUP_CONTENT
+             , A.STUDYGROUP_DELETE_STATUS
+          FROM STUDYGROUP A
+         WHERE STUDYGROUP_TYPE = '영어 시험 스터디';
+    </select>
+
+    <select id="selectAllLicenseStudyGroup" resultMap="studyGroupResultMap">
+        SELECT
+               A.STUDYGROUP_ID
+             , A.STUDYGROUP_TYPE
+             , A.STUDYGROUP_CREATE_DATE
+             , A.STUDYGROUP_MEMBER_COUNT
+             , A.STUDYGROUP_ACTIVATION_STATUS
+             , A.STUDYGROUP_STUDY_TIME
+             , A.STUDYGROUP_CONTENT
+             , A.STUDYGROUP_DELETE_STATUS
+          FROM STUDYGROUP A
+         WHERE STUDYGROUP_TYPE = '국가 자격증 스터디';
+    </select>
+
+    <select id="selectStudyGroupByStatus" resultMap="studyGroupResultMap" parameterType="_int">
+        SELECT
+               A.STUDYGROUP_ID
+             , A.STUDYGROUP_TYPE
+             , A.STUDYGROUP_CREATE_DATE
+             , A.STUDYGROUP_MEMBER_COUNT
+             , A.STUDYGROUP_ACTIVATION_STATUS
+             , A.STUDYGROUP_STUDY_TIME
+             , A.STUDYGROUP_CONTENT
+             , A.STUDYGROUP_DELETE_STATUS
+          FROM STUDYGROUP A
+         WHERE STUDYGROUP_ACTIVATION_STATUS = #{activationStatus};
+    </select>
+
+    <select id="selectStudyGroupsByType" resultMap="studyGroupResultMap" parameterType="_int">
+        SELECT
+               STUDYGROUP_ID
+             , STUDYGROUP_TYPE
+             , STUDYGROUP_CREATE_DATE
+             , STUDYGROUP_MEMBER_COUNT
+             , STUDYGROUP_ACTIVATION_STATUS
+             , STUDYGROUP_STUDY_TIME
+             , STUDYGROUP_CONTENT
+             , STUDYGROUP_DELETE_STATUS
+          FROM STUDYGROUP
+         WHERE STUDYGROUP_TYPE = #{studygroup_type};
+    </select>
+</mapper>

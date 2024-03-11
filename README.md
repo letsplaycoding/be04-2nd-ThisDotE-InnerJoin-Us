@@ -3,17 +3,18 @@
 </h1>
 
 <h2 align="center">
-	
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FThisDotE%2FInnerJoinUs.git&count_bg=%232884FF&title_bg=%23FFA900&icon=googleclassroom.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 <div align=center>
 <img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/3bdd0c01-14e3-40e2-aa4a-870df774856c">
-</div>
 
- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FThisDotE%2FInnerJoinUs.git&count_bg=%232884FF&title_bg=%23FFA900&icon=googleclassroom.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+</div>
 
 </h2>
 
 <div align=center>
-<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5.png"/>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/7e153380-e7cb-49b9-9e3f-a725f675c2d7">
 </div>
 
 <h2 align="center">👾 Members 👾</h2>
@@ -35,8 +36,18 @@
 🐣 **이드보라**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/Bodrami)
 
+<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5">
+
 </h3>
 
+<br/>
+
+----
+
+<h2 align="center">DO YOU INNER JOIN US? 👀</h2>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/c7b54db8-2500-4457-bff5-b479a5103ce3.png"/>
+
+<br/>
 
 # 1. 프로젝트 개요
 
@@ -50,15 +61,8 @@ InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초
 하지만 그렇기엔 일반 커뮤니티와 다르지 않을 것이라 예상했기에 개발과 개발을 시작하기 위해 필요한 요소들을 같이 공부할 수 있는 스터디 컨텐츠를 구상했다. 커뮤니티 회원들은 서로 비대면으로 지식을 공유하고 같이 성장해나갈 수 있는
 스터디 컨텐츠를 참여하여 세계적으로 더욱 더 나은 개발환경을 구축할 수 있고 초보 개발자들이 InnerJoinUs 커뮤니티에서 성장해 나중엔 멘토가 되어 또 다른 초보 개발자들에게 영향을 끼칠 수 있다는 생각으로 개발자 커뮤니티를 구축했다.
 
-> 개발환경의 접근성에 대한 ChatGPT의 의견
-<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fc10ebc5-ed69-468e-91b2-f6eed0af7f15.png" width="800" height="400"/>
-
 > OKKY 사이트 질문 게시글 수
 <img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/885bde26-c7a1-4864-8a5a-e1425fa3be5f.png" width="800" height="400"/>
-
-<br/>
-
-## 📍 제안요청서 (올릴 예정)
 
 <br/>
 
@@ -100,6 +104,18 @@ InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초
 <img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/f4c68f3b-76d2-472c-9ca7-c4f9ef066d6e.png" width="1000" height="500"/>
 
 <br/>
+
+## 📍 DDD
+<ERD CLOUD 모델링>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/101622086/830b828c-a787-4b88-aa90-5054da003b28"/>
+<br/>
+
+<MIRO 모델링>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/101622086/37a7b2a7-cb55-4197-8eaa-ac183789a7a2"/>
+
+MIRO 링크 : [<img src="https://img.shields.io/badge/Miro-Link-181717?logo=Miro">](https://miro.com/app/board/uXjVNwsdb7w=/)
+
+
 
 # 3. 요구사항
 
@@ -398,18 +414,30 @@ REFERENCES `user` ( `user_code` );
 <br/>
 
 # 5. 단위 테스트 결과 보고서
+![KakaoTalk_20240310_202121776](https://github.com/ThisDotE/InnerJoinUs/assets/101622086/6001a746-4e01-480b-a68c-de467054ae6e)
 
 <br/>
 
-# 6. Rest API 설계문서 산출물
+# 6. REST API 문서
 <details>
-<summary>Rest API 설계문서</summary>
-<div markdown="1">
-
-
- 
-</details>
+<summary>회원 관련 API</summary>
+<div>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/45275759/1a2759a9-893c-451a-a93d-dffe621a51a6" />
 </div>
+</details>
+<details>
+<summary>게시글/댓글 관련 API</summary>
+<div>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/45275759/93e094f7-6a09-42e5-ae37-da45cc436239" />
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/45275759/33fd5258-198c-411d-b14d-19370051546f" />
+</div>
+</details>
+<details>
+<summary>스터디그룹 관련 API</summary>
+<div>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/45275759/b07fa694-49d8-448d-ace4-3625e0fab674" />
+</div>
+</details>
 
 # 7. 프로젝트 회고
 
@@ -421,4 +449,4 @@ REFERENCES `user` ( `user_code` );
 
 - **이드보라** : 
 
-- **신동호** : 훗
+- **신동호** : 
