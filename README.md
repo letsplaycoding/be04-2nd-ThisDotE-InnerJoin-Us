@@ -3,17 +3,18 @@
 </h1>
 
 <h2 align="center">
-	
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FThisDotE%2FInnerJoinUs.git&count_bg=%232884FF&title_bg=%23FFA900&icon=googleclassroom.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 <div align=center>
 <img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/3bdd0c01-14e3-40e2-aa4a-870df774856c">
-</div>
 
- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FThisDotE%2FInnerJoinUs.git&count_bg=%232884FF&title_bg=%23FFA900&icon=googleclassroom.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+</div>
 
 </h2>
 
 <div align=center>
-<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5.png"/>
+<img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/7e153380-e7cb-49b9-9e3f-a725f675c2d7">
 </div>
 
 <h2 align="center">👾 Members 👾</h2>
@@ -34,6 +35,8 @@
 
 🐣 **이드보라**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/Bodrami)
+
+<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fb7f77e5-8922-41dd-9b81-247e7efddde5">
 
 </h3>
 
