@@ -50,9 +50,6 @@ InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초
 하지만 그렇기엔 일반 커뮤니티와 다르지 않을 것이라 예상했기에 개발과 개발을 시작하기 위해 필요한 요소들을 같이 공부할 수 있는 스터디 컨텐츠를 구상했다. 커뮤니티 회원들은 서로 비대면으로 지식을 공유하고 같이 성장해나갈 수 있는
 스터디 컨텐츠를 참여하여 세계적으로 더욱 더 나은 개발환경을 구축할 수 있고 초보 개발자들이 InnerJoinUs 커뮤니티에서 성장해 나중엔 멘토가 되어 또 다른 초보 개발자들에게 영향을 끼칠 수 있다는 생각으로 개발자 커뮤니티를 구축했다.
 
-> 개발환경의 접근성에 대한 ChatGPT의 의견
-<img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/fc10ebc5-ed69-468e-91b2-f6eed0af7f15.png" width="800" height="400"/>
-
 > OKKY 사이트 질문 게시글 수
 <img src="https://github.com/ThisDotE/communityForDevelopers/assets/101622086/885bde26-c7a1-4864-8a5a-e1425fa3be5f.png" width="800" height="400"/>
 
