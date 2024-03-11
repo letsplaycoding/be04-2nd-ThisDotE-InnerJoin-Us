@@ -439,7 +439,7 @@ REFERENCES `user` ( `user_code` );
 </div>
 </details>
 
-# 6. 프로젝트 회고
+# 7. 프로젝트 회고
 
 - **이준형** : 
 
