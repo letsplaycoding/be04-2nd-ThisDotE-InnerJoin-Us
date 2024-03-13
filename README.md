@@ -111,7 +111,18 @@ InnerJoinUs 커뮤니티는 개발에 도전하거나 개발에 도전하는 초
 
 <br/><br/>
 
-> MIRO 모델링
+> Event Storming
+<img src="https://github.com/beyond-sw-camp/be04-2nd-ThisDotE-InnerJoin-Us/assets/101622086/a6744b54-9777-45e9-8df1-41db95521cd8"/>
+
+> Command Deduction
+<img src="https://github.com/beyond-sw-camp/be04-2nd-ThisDotE-InnerJoin-Us/assets/101622086/ca720530-b62e-40c7-b4f9-aeff2de7cd38"/>
+
+> Aggregate
+<img src="https://github.com/beyond-sw-camp/be04-2nd-ThisDotE-InnerJoin-Us/assets/101622086/ea851445-fd4a-4f56-a552-e0e469cd20c1"/>
+
+
+
+> Context Mapping
 <img src="https://github.com/ThisDotE/InnerJoinUs/assets/101622086/37a7b2a7-cb55-4197-8eaa-ac183789a7a2"/>
 
 MIRO 링크 : [<img src="https://img.shields.io/badge/Miro-Link-181717?logo=Miro">](https://miro.com/app/board/uXjVNwsdb7w=/)
@@ -415,7 +426,7 @@ REFERENCES `user` ( `user_code` );
 <br/>
 
 # 5. 단위 테스트 결과 보고서
-![KakaoTalk_20240310_202121776](https://github.com/ThisDotE/InnerJoinUs/assets/101622086/6001a746-4e01-480b-a68c-de467054ae6e)
+<img src="https://github.com/beyond-sw-camp/be04-2nd-ThisDotE-InnerJoin-Us/assets/101622086/3301b4ed-422d-4c4e-9725-a496b83d20c9"/>
 
 <br/>
 
