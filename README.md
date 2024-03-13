@@ -409,7 +409,7 @@ REFERENCES `user` ( `user_code` );
 # 4. 프로젝트 아키텍처
 
 <div align=center>
-<img src="https://github.com/ThisDotE/InnerJoinUs/assets/149561287/243efa0f-f023-4001-aa89-d697ad856374.png" width="800" height="500"/></h2>
+<img src="https://github.com/beyond-sw-camp/be04-2nd-ThisDotE-InnerJoin-Us/assets/149561287/80a93285-d165-410b-b440-ef1a240c6460.png" width="800" height="500"/></h2>
 </div>
 
 <br/>
@@ -448,7 +448,6 @@ CQRS 패턴을 적용하여 Command(create, udate, delete)는 Spring Data JPA, Q
 설계부터 구현까지의 과정을 경험해볼 수 있었던 것이 좋았고, 새로운 기술들을 배우고 적용해 보는 것이 재미있었다.  특히 Spring Data JPA를 적용하여 command 작업을 할 때 쿼리 메소드를 통하여 
 DB에 더 쉽고 편하게 접근하는 것이 기억에 남는다. 물론 Feign Client를 사용해 micro service들 간의 통신하는 부분, Spring Security를 활용한 인증/인가를 적용해보는 부분도 새로웠고 
 앞으로 더 공부해봐야겠다는 생각을 하였다.
-- 
 
 - **소우주** : DB를 이용한 백엔드 개발 중간에 DB 수정할 일이 잦았는데 그때마다 관련된 java 단 코드들도 일일이 모두 수정해줘야 해서 흐름도 끊기고 꽤나 고통스러웠습니다. 
 DB를 설계할 때 귀찮더라도 DB 수정할 일이 덜 생기도록 조금 더 꼼꼼히 설계해야겠다는 다짐을 했습니다. FeignClient 사용하여 클라이언트 간 통신하는 부분을 맡았고 VO 의 형식, 인증 문제, 경로 지정 등의 
